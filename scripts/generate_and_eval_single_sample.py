@@ -14,6 +14,21 @@ from src.utils import extract_first_code, query_server, set_gpu_arch, read_file,
 """
 Generate and evaluate a single sample
 Easiest way to get started, to test a single problem for experimentation or debugging
+
+Launching SGLang server:
+
+```
+python -m src.server.sglang_server --model_name deepseek-ai/deepseek-coder-6.7b-instruct --port 30000
+```
+
+Using this script to test:
+
+```
+python3 scripts/generate_and_eval_single_sample.py dataset_src="huggingface" level=2 problem_id=40 model_name="deepseek-ai/deepseek-coder-6.7b-instruct"
+```
+
+
+
 """
 
 REPO_TOP_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -42,7 +57,7 @@ class EvalConfig(Config):
         self.gpu_arch = ["Ada"]
 
         # Inference config
-        self.server_type = "deepseek"
+        self.server_type = "sglang"
         self.model_name = "deepseek-coder"
         self.max_tokens = 4096
         self.temperature = 0.0
@@ -57,6 +72,7 @@ class EvalConfig(Config):
         self.log_eval_result = False
 
     def verbose_logging(self):
+        self.verbose = True
         self.log = True
         self.log_prompt = True
         self.log_generated_kernel = True
@@ -134,6 +150,10 @@ def main(config: EvalConfig):
 
     # Query server with constructed prompt
     custom_cuda = inference_server(custom_cuda_prompt)
+    print("=====================================")
+    print("Raw output from model:")
+    print(custom_cuda)
+    print("=====================================")
     custom_cuda = extract_first_code(custom_cuda, ["python", "cpp"])
     # check LLM is able to generate custom CUDA code
     assert custom_cuda is not None, "Custom CUDA code generation failed"

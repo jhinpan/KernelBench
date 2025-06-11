@@ -116,9 +116,9 @@ def query_server(
         case "sglang":
             url = f"http://{server_address}:{server_port}"
             client = OpenAI(
-                api_key=SGLANG_KEY, base_url=f"{url}/v1", timeout=None, max_retries=0
+                api_key=SGLANG_KEY if SGLANG_KEY else "not_needed", base_url=f"{url}/v1", timeout=None, max_retries=0
             )
-            model = "default"
+            model = model_name
         case "deepseek":
             client = OpenAI(
                 api_key=DEEPSEEK_KEY,
@@ -326,15 +326,30 @@ def query_server(
     # for all other kinds of servers, use standard API
     else:
         if type(prompt) == str:
-            response = client.completions.create(
-                model=model,
-                prompt=prompt,
-                temperature=temperature,
-                n=num_completions,
-                max_tokens=max_tokens,
-                top_p=top_p,
-            )
-            outputs = [choice.text for choice in response.choices]
+            # SGLang server expects chat format for instruct models
+            if server_type == "sglang" and "instruct" in model.lower():
+                response = client.chat.completions.create(
+                    model=model,
+                    messages=[
+                        {"role": "system", "content": "You are a helpful assistant."},
+                        {"role": "user", "content": prompt},
+                    ],
+                    temperature=temperature,
+                    n=num_completions,
+                    max_tokens=max_tokens,
+                    top_p=top_p,
+                )
+                outputs = [choice.message.content for choice in response.choices]
+            else:
+                response = client.completions.create(
+                    model=model,
+                    prompt=prompt,
+                    temperature=temperature,
+                    n=num_completions,
+                    max_tokens=max_tokens,
+                    top_p=top_p,
+                )
+                outputs = [choice.text for choice in response.choices]
         else:
             response = client.chat.completions.create(
                 model=model,
@@ -371,11 +386,18 @@ SERVER_PRESETS = {
         "temperature": 0.7,
         "max_tokens": 4096,
     },
-    "sglang": {  # this is for running locally, mostly for Llama
+    "sglang-remote": {  # this is for running locally, mostly for Llama
         "temperature": 0.8, # human eval pass@N temperature
         "server_port": 10210,
         "server_address": "matx2.stanford.edu",
         "max_tokens": 8192,
+    },
+    "sglang": {
+        "temperature": 0.0,
+        "server_port": 30000, # Default sglang port, change if you use a different one
+        "server_address": "localhost",
+        "model_name": "meta-llama/Meta-Llama-3-8B-Instruct", # default model, can be overridden
+        "max_tokens": 4096,
     },
     "anthropic": {  # for Claude 3.5 Sonnet
         "model_name": "claude-3-5-sonnet-20241022",
