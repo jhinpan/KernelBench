@@ -102,10 +102,37 @@ def analyze_greedy_eval(run_name, hardware, baseline, level):
     from src.score import geometric_mean_speed_ratio_correct_only, geometric_mean_speed_ratio_correct_and_faster_only, fastp
     import numpy as np
 
+    # Align eval results and baseline results by iterating through problems
+    is_correct_list = []
+    baseline_speed_list = []
+    actual_speed_list = []
+
+    problem_map = {
+        int(os.path.basename(p).split("_")[0]): os.path.basename(p) for p in dataset
+    }
+
+    for pid in range(1, total_count + 1):
+        pid_str = str(pid)
+        
+        # This can fail if a problem name isn't in the map, but it shouldn't if dataset is correct
+        ref_arch_name = problem_map.get(pid)
+        if not ref_arch_name:
+            continue
+
+        is_correct_list.append(eval_results[pid_str]["correctness"])
+        actual_speed_list.append(eval_results[pid_str]["runtime"])
+        
+        baseline_entry = baseline_results[f"level{level}"].get(ref_arch_name)
+
+        if baseline_entry and "mean" in baseline_entry:
+            baseline_speed_list.append(baseline_entry["mean"])
+        else:
+            baseline_speed_list.append(-1.0)
+
     # Extract the speedup values
-    is_correct = np.array([entry["correctness"] for entry in eval_results.values()])
-    baseline_speed = np.array([entry["mean"] for entry in baseline_results[f'level{level}'].values()])
-    actual_speed = np.array([entry["runtime"] for entry in eval_results.values()])
+    is_correct = np.array(is_correct_list)
+    baseline_speed = np.array(baseline_speed_list)
+    actual_speed = np.array(actual_speed_list)
     n = len(is_correct)
 
     assert len(baseline_speed) == n, "Baseline speedup values do not match the number of eval results"

@@ -197,13 +197,13 @@ if __name__ == "__main__":
     # test_measure_particular_program(2, 28)
     
     # Replace this with whatever hardware you are running on 
-    hardware_name = "L40S_matx3"
+    hardware_name = "H100_atlas"
 
-    input(f"You are about to start recording baseline time for {hardware_name}, press Enter to continue...")
+    print(f"Starting recording baseline time for {hardware_name}...")
     # Systematic recording of baseline time
 
     if os.path.exists(os.path.join(TIMING_DIR, hardware_name)):
-        input(f"Directory {hardware_name} already exists, Are you sure you want to overwrite? Enter to continue...")
+        print(f"Directory {hardware_name} already exists, overwriting...")
 
     # 1. Record Torch Eager
     record_baseline_times(use_torch_compile=False, 
