@@ -57,7 +57,8 @@ class EvalConfig(Config):
 
         # Construct this from mapping from architecture name to torch cuda arch list in the future
         # you can either specify SM version or just use the name
-        self.gpu_arch = ["Ada"]
+        # We are using H100 for now
+        self.gpu_arch = ["Hopper"] # this will be used to set the CUDA_ARCH environment variable
 
         # Logging
         # Top Directory to Store Runs

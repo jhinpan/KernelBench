@@ -18,7 +18,7 @@ Easiest way to get started, to test a single problem for experimentation or debu
 Launching SGLang server:
 
 ```
-python -m src.server.sglang_server --model_name deepseek-ai/deepseek-coder-6.7b-instruct --port 30000
+python -m src.server.sglang_server --model_name deepseek-ai/deepseek-coder-6.7b-instruct  --port 30000
 ```
 
 Using this script to test:
@@ -54,7 +54,7 @@ class EvalConfig(Config):
         self.eval_mode = "local"
         # Construct this from mapping from architecture name to torch cuda arch list in the future
         # you can either specify SM version or just use the name
-        self.gpu_arch = ["Ada"]
+        self.gpu_arch = ["Hopper"]
 
         # Inference config
         self.server_type = "sglang"
