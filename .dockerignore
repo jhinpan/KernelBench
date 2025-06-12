@@ -1,0 +1,47 @@
+# Git related
+.git
+.gitignore
+.github
+
+# Python cache
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info
+.eggs
+dist
+build
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv
+
+# IDE related
+.vscode
+.idea
+*.swp
+*.swo
+
+# Data files (if there are large files)
+data/
+*.h5
+*.pkl
+*.pt
+*.pth
+
+# Documentation
+docs/
+*.md
+
+# Test related
+.pytest_cache
+.coverage
+htmlcov
+
+# Other
+.DS_Store
+Thumbs.db
