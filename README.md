@@ -66,6 +66,12 @@ KernelBench/
 
 ## 🔧 Set up
 ```
+# Download installer
+curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+# Install (answer 'yes' to initialize conda)
+bash Miniconda3-latest-*.sh
+
 conda create --name kernel-bench python=3.10
 conda activate kernel-bench
 pip install -r requirements.txt
