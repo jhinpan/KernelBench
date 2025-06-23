@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  kernelbench:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: jhinpan/kernelbenchimage:latest
+    container_name: kernelbench-dev
+    
+    # Enable GPU support
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    
+    # Mount the project directory for development
+    volumes:
+      - .:/workspace/KernelBench
+      - kernelbench-cache:/workspace/KernelBench/cache
+      - kernelbench-runs:/workspace/KernelBench/runs
+    
+    # Environment variables
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+      - PYTHONUNBUFFERED=1
+      # Add your API keys here or use .env file
+      # - OPENAI_API_KEY=${OPENAI_API_KEY}
+      # - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      # - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      # - TOGETHER_API_KEY=${TOGETHER_API_KEY}
+    
+    # Keep container running for interactive use
+    stdin_open: true
+    tty: true
+    
+    # Network mode for API access
+    network_mode: host
+    
+    # Working directory
+    working_dir: /workspace/KernelBench
+
+# Named volumes for persistent storage
+volumes:
+  kernelbench-cache:
+  kernelbench-runs:

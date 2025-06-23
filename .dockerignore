@@ -35,7 +35,8 @@ data/
 
 # Documentation
 docs/
-*.md
+# Keep important markdown files
+# *.md
 
 # Test related
 .pytest_cache
@@ -45,3 +46,17 @@ htmlcov
 # Other
 .DS_Store
 Thumbs.db
+
+# Results and runs (will be mounted as volumes)
+runs/
+cache/
+
+# Modal
+.modal/
+
+# Temporary files
+*.tmp
+*.log
+
+# Jupyter notebooks
+.ipynb_checkpoints
