@@ -1,50 +1,41 @@
-version: '3.8'
+version: "3.8"
 
 services:
   kernelbench:
+    # ───── Build / Image ─────
     build:
       context: .
       dockerfile: Dockerfile
     image: jhinpan/kernelbenchimage:latest
     container_name: kernelbench-dev
-    
-    # Enable GPU support
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
-    
-    # Mount the project directory for development
-    volumes:
-      - .:/workspace/KernelBench
-      - kernelbench-cache:/workspace/KernelBench/cache
-      - kernelbench-runs:/workspace/KernelBench/runs
-    
-    # Environment variables
+
+    # ───── GPU access ─────
+    runtime: nvidia                    # activates NVIDIA Container Toolkit
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
       - NVIDIA_DRIVER_CAPABILITIES=compute,utility
       - PYTHONUNBUFFERED=1
-      # Add your API keys here or use .env file
+      # Add API keys in a .env file or uncomment below:
       # - OPENAI_API_KEY=${OPENAI_API_KEY}
       # - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
       # - GOOGLE_API_KEY=${GOOGLE_API_KEY}
       # - TOGETHER_API_KEY=${TOGETHER_API_KEY}
-    
-    # Keep container running for interactive use
+
+    # ───── Volume mounts ─────
+    volumes:
+      # Project source (host)  → /workspace/KernelBench (container)
+      - .:/workspace/KernelBench
+      # Named volumes for cached data and run outputs
+      - kernelbench-cache:/workspace/KernelBench/cache
+      - kernelbench-runs:/workspace/KernelBench/runs
+
+    # ───── Interactive settings ─────
     stdin_open: true
     tty: true
-    
-    # Network mode for API access
     network_mode: host
-    
-    # Working directory
     working_dir: /workspace/KernelBench
 
-# Named volumes for persistent storage
+# ───── Named volumes ─────
 volumes:
   kernelbench-cache:
   kernelbench-runs:
