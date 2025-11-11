@@ -27,7 +27,7 @@ gpu_arch_mapping = {
 REPO_TOP_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 KERNEL_BENCH_PATH = os.path.join(REPO_TOP_PATH, "KernelBench")
 
-cuda_version = "12.4.0"
+cuda_version = "12.8.0"
 flavor = "devel"
 operating_sys = "ubuntu22.04"
 tag = f"{cuda_version}-{flavor}-{operating_sys}"
@@ -35,21 +35,7 @@ tag = f"{cuda_version}-{flavor}-{operating_sys}"
 image = (
     modal.Image.from_registry(f"nvidia/cuda:{tag}", add_python="3.10")
     .apt_install("git", "gcc-10", "g++-10", "clang")
-    .pip_install(
-        "numpy",
-        "packaging",
-        "pydra_config",
-        "torch==2.5.0",
-        "tqdm",
-        "datasets",
-        "transformers",
-        "pytest",
-        "ninja",
-        "utils",
-        "einops",
-        "python-dotenv",
-        "litellm[proxy]",
-    )
+    .pip_install_from_requirements(os.path.join(REPO_TOP_PATH, "requirements.txt"))
     .add_local_dir(KERNEL_BENCH_PATH, remote_path="/root/KernelBench")
     .add_local_python_source("src")
     .add_local_python_source("scripts")

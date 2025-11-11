@@ -55,7 +55,7 @@ gpu_arch_mapping = {"L40S": ["Ada"], "H100": ["Hopper"], "A100": ["Ampere"], "A1
 batch_size = 10
 gpu = "L40S"
 timeout = 1800
-cuda_version = "12.4.0"  # should be no greater than host CUDA version
+cuda_version = "12.8.0"  # should be no greater than host CUDA version
 flavor = "devel"  #  includes full CUDA toolkit
 operating_sys = "ubuntu22.04"
 tag = f"{cuda_version}-{flavor}-{operating_sys}"
@@ -65,28 +65,14 @@ image = (
     .apt_install("git",
                 "gcc-10",
                 "g++-10",
-                "clang" # note i skip a step 
+                "clang" # note i skip a step
                 )
-    .pip_install(  # required to build flash-attn
-        # Let's unify these dependencies somewhere
-        "numpy",
-        "packaging",
-        "pydra_config",
-        "torch==2.5.0",
-        "tqdm",
-        "datasets",
-        "transformers",
-        "pytest",
-        "ninja",
-        "utils",
-        "einops",
-        "python-dotenv",
-    )
+    .pip_install_from_requirements(os.path.join(REPO_TOP_PATH, "requirements.txt"))
     .add_local_dir(
         KERNEL_BENCH_PATH,
         remote_path="/root/KernelBench"
     )
-    .add_local_python_source("src") 
+    .add_local_python_source("src")
 )
 
 def write_batch_to_json(entries_to_write: list, f_path: str):
