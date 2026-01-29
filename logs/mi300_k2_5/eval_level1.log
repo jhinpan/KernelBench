@@ -1,0 +1,862 @@
+Starting Batch Eval with config: EvalConfig({'run_name': 'mi300_k2_5_level1', 'dataset_src': 'huggingface', 'dataset_name': 'ScalingIntelligence/KernelBench', 'level': 1, 'subset': [None, None], 'problem_ids': 'None', 'eval_mode': 'local', 'gpu': 'A10G', 'gpu_arch': ['gfx942'], 'runs_dir': '/sgl-workspace/KernelBench/runs', 'verbose': False, 'num_correct_trials': 5, 'num_perf_trials': 100, 'timeout': 180, 'measure_performance': True, 'timing_method': 'cuda_event', 'build_cache': False, 'num_cpu_workers': 20, 'kernel_eval_build_dir': '/sgl-workspace/KernelBench/cache', 'num_gpu_devices': 8, 'backend': 'triton', 'precision': 'fp32', 'num_samples_per_problem': 1, 'pass_at_k_values': [1]})
+Evaluating 1 sample(s) each for level 1 problems: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
+Start evaluation on 100 unevaluated samples in range: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
+Processing batches:   0%|          | 0/100 [00:00<?, ?it/s][Curr Batch] 8 tasks over 8 GPUs; [Total Work left] 92
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.10/site-packages/triton/language/core.py", line 43, in wrapper
+    return fn(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/triton/language/core.py", line 2213, in store
+    return _semantic.store(pointer, value, mask, boundary_check, cache_modifier, eviction_policy)
+  File "/opt/venv/lib/python3.10/site-packages/triton/language/semantic.py", line 1295, in store
+    return self._store_legacy(ptr, val, mask, boundary_check, cache, eviction)
+  File "/opt/venv/lib/python3.10/site-packages/triton/language/semantic.py", line 1257, in _store_legacy
+    val = self.broadcast_impl_shape(val, ptr.type.get_block_shapes())
+  File "/opt/venv/lib/python3.10/site-packages/triton/language/semantic.py", line 700, in broadcast_impl_shape
+    raise ValueError(f"Cannot broadcast, rank mismatch: {src_shape}, {shape}")
+ValueError: Cannot broadcast, rank mismatch: ['64', '1'], ['64']
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/sgl-workspace/KernelBench/src/kernelbench/eval.py", line 771, in run_and_check_correctness
+    output_new = model_new(*inputs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/tmp/tmpji6axxk9.py", line 95, in forward
+    return triton_matvec(A, B)
+  File "/tmp/tmpji6axxk9.py", line 68, in triton_matvec
+    matvec_kernel[grid](
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 393, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 599, in run
+    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 782, in _do_compile
+    kernel = self.compile(src, target=target, options=options.__dict__)
+  File "/opt/venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 302, in compile
+    module = src.make_ir(target, options, codegen_fns, module_map, context)
+  File "/opt/venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 82, in make_ir
+    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,
+triton.compiler.errors.CompilationError: at 37:4:
+        # Load B block: shape (BLOCK_SIZE_K,)
+        b_ptrs = B_ptr + (k_start + offs_k)
+        b_mask = (k_start + offs_k) < K
+        b = tl.load(b_ptrs, mask=b_mask, other=0.0)
+
+        # Compute partial dot product
+        acc += tl.sum(a * b[None, :], axis=1)
+
+    # Store result
+    c_ptrs = C_ptr + offs_m
+    c_mask = offs_m < M
+    tl.store(c_ptrs, acc[:, None], mask=c_mask[:, None])
+    ^
+Cannot broadcast, rank mismatch: ['64', '1'], ['64']
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 1, Sample ID: 0
+compiled=True correctness=False metadata={'hardware': '', 'device': 'cuda:0', 'max_difference': ['0.725464', '0.720825', '0.721313', '0.718384', '0.720093'], 'avg_difference': ['0.666587', '0.666760', '0.666306', '0.666467', '0.666348'], 'correctness_issue': 'Output mismatch', 'correctness_trials': '(0 / 5)'} runtime=-1.0 runtime_stats={} ref_runtime=1.17 ref_runtime_stats={'mean': 1.17, 'std': 0.0297, 'min': 1.11, 'max': 1.33, 'num_trials': 100, 'hardware': '', 'device': 'cuda:0'}
+Adding Eval Result to file for problem 1 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 2, Sample ID: 0
+compiled=True correctness=False metadata={'hardware': '', 'device': 'cuda:1', 'max_difference': ['1.410889', '1.412354', '1.407959', '1.412109', '1.409668'], 'avg_difference': ['1.333187', '1.333632', '1.332653', '1.333181', '1.332943'], 'correctness_issue': 'Output mismatch', 'correctness_trials': '(0 / 5)'} runtime=-1.0 runtime_stats={} ref_runtime=1.13 ref_runtime_stats={'mean': 1.13, 'std': 0.0232, 'min': 1.1, 'max': 1.22, 'num_trials': 100, 'hardware': '', 'device': 'cuda:1'}
+Adding Eval Result to file for problem 2 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 3, Sample ID: 0
+compiled=True correctness=False metadata={'hardware': '', 'device': 'cuda:2', 'max_difference': ['156.853241', '157.550980', '157.002823', '157.245544', '158.624695'], 'avg_difference': ['128.093018', '128.085907', '128.063889', '128.093399', '128.077927'], 'correctness_issue': 'Output mismatch', 'correctness_trials': '(0 / 5)'} runtime=-1.0 runtime_stats={} ref_runtime=2.7 ref_runtime_stats={'mean': 2.7, 'std': 0.0608, 'min': 2.64, 'max': 3.16, 'num_trials': 100, 'hardware': '', 'device': 'cuda:2'}
+Adding Eval Result to file for problem 3 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 4, Sample ID: 0
+compiled=True correctness=False metadata={'hardware': '', 'device': 'cuda:3', 'runtime_error': 'at 37:4:\n        # Load B block: shape (BLOCK_SIZE_K,)\n        b_ptrs = B_ptr + (k_start + offs_k)\n        b_mask = (k_start + offs_k) < K\n        b = tl.load(b_ptrs, mask=b_mask, other=0.0)\n\n     ...', 'runtime_error_name': 'triton.compiler.errors.CompilationError', 'runtime_error_traceback': 'Traceback (most recent call last):\n  File "/opt/venv/lib/python3.10/site-packages/triton/language/core.py", line 43, in wrapper\n    return fn(*args, **kwargs)\n  File "/opt/venv/lib/python3.10/site-packages/triton/language/core.py", line 2213, in store\n    return _semantic.store(pointer, value, mask, boundary_check, cache_modifier, eviction_policy)\n  File "/opt/venv/lib/python3.10/site-packages/triton/language/semantic.py", line 1295, in store\n    return self._store_legacy(ptr, val, mask, boundary_check, cache, eviction)\n  File "/opt/venv/lib/python3.10/site-packages/triton/language/semantic.py", line 1257, in _store_legacy\n    val = self.broadcast_impl_shape(val, ptr.type.get_block_shapes())\n  File "/opt/venv/lib/python3.10/site-packages/triton/language/semantic.py", line 700, in broadcast_impl_shape\n    raise ValueError(f"Cannot broadcast, rank mismatch: {src_shape}, {shape}")\nValueError: Cannot broadcast, rank mismatch: [\'64\', \'1\'], [\'64\']\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File "/sgl-workspace/KernelBench/src/kernelbench/eval.py", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File "/tmp/tmpji6axxk9.py", line 95, in forward\n    return triton_matvec(A, B)\n  File "/tmp/tmpji6axxk9.py", line 68, in triton_matvec\n    matvec_kernel[grid](\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 393, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 599, in run\n    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 782, in _do_compile\n    kernel = self.compile(src, target=target, options=options.__dict__)\n  File "/opt/venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 302, in compile\n    module = src.make_ir(target, options, codegen_fns, module_map, context)\n  File "/opt/venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 82, in make_ir\n    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,\ntriton.compiler.errors.CompilationError: at 37:4:\n        # Load B block: shape (BLOCK_SIZE_K,)\n        b_ptrs = B_ptr + (k_start + offs_k)\n        b_mask = (k_start + offs_k) < K\n        b = tl.load(b_ptrs, mask=b_mask, other=0.0)\n\n        # Compute partial dot product\n        acc += tl.sum(a * b[None, :], axis=1)\n\n    # Store result\n    c_ptrs = C_ptr + offs_m\n    c_mask = offs_m < M\n    tl.store(c_ptrs, acc[:, None], mask=c_mask[:, None])\n    ^\nCannot broadcast, rank mismatch: [\'64\', \'1\'], [\'64\']\n'} runtime=-1.0 runtime_stats={} ref_runtime=2.08 ref_runtime_stats={'mean': 2.08, 'std': 0.0973, 'min': 1.82, 'max': 2.52, 'num_trials': 100, 'hardware': '', 'device': 'cuda:3'}
+Adding Eval Result to file for problem 4 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 5, Sample ID: 0
+compiled=True correctness=True metadata={'hardware': '', 'device': 'cuda:4', 'correctness_trials': '(5 / 5)'} runtime=2.15 runtime_stats={'mean': 2.15, 'std': 0.0381, 'min': 2.12, 'max': 2.41, 'num_trials': 100, 'hardware': '', 'device': 'cuda:4'} ref_runtime=2.08 ref_runtime_stats={'mean': 2.08, 'std': 0.0729, 'min': 2.04, 'max': 2.38, 'num_trials': 100, 'hardware': '', 'device': 'cuda:4'}
+Adding Eval Result to file for problem 5 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 6, Sample ID: 0
+compiled=True correctness=False metadata={'hardware': '', 'device': 'cuda:5', 'max_difference': ['89.140625', '89.218750', '89.109375', '88.992188', '89.500000'], 'avg_difference': ['86.595100', '86.613571', '86.607307', '86.610825', '86.604294'], 'correctness_issue': 'Output mismatch', 'correctness_trials': '(0 / 5)'} runtime=-1.0 runtime_stats={} ref_runtime=1.03 ref_runtime_stats={'mean': 1.03, 'std': 0.0669, 'min': 0.909, 'max': 1.16, 'num_trials': 100, 'hardware': '', 'device': 'cuda:5'}
+Adding Eval Result to file for problem 6 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 7, Sample ID: 0
+compiled=True correctness=False metadata={'hardware': '', 'device': 'cuda:6', 'max_difference': ['0.018635', '0.019625', '0.019028', '0.018589', '0.019007'], 'avg_difference': ['0.010425', '0.010415', '0.010409', '0.010415', '0.010405'], 'correctness_issue': 'Output mismatch', 'correctness_trials': '(0 / 5)'} runtime=-1.0 runtime_stats={} ref_runtime=2.02 ref_runtime_stats={'mean': 2.02, 'std': 0.04, 'min': 1.95, 'max': 2.19, 'num_trials': 100, 'hardware': '', 'device': 'cuda:6'}
+Adding Eval Result to file for problem 7 sample 0
+Processing batches:   8%|▊         | 8/100 [00:36<07:03,  4.61s/it][Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:0 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:1 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:6 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:7 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:5 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:2 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:4 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:4 , warm up 3, trials 100
+[Error] Exception happens during correctness check
+Error in launching kernel for ModelNew: at 37:4:
+        # Load B block: shape (BLOCK_SIZE_K,)
+        b_ptrs = B_ptr + (k_start + offs_k)
+        b_mask = (k_start + offs_k) < K
+        b = tl.load(b_ptrs, mask=b_mask, other=0.0)
+
+        # Compute partial dot product
+        acc += tl.sum(a * b[None, :], axis=1)
+
+    # Store result
+    c_ptrs = C_ptr + offs_m
+    c_mask = offs_m < M
+    tl.store(c_ptrs, acc[:, None], mask=c_mask[:, None])
+    ^
+Cannot broadcast, rank mismatch: ['64', '1'], ['64']
+
+[Full Traceback]:
+
+
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:3 , warm up 3, trials 100
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 8, Sample ID: 0
+compiled=True correctness=False metadata={'hardware': '', 'device': 'cuda:7', 'max_difference': ['0.531921', '0.534180', '0.525879', '0.529785', '0.523865'], 'avg_difference': ['0.479894', '0.479965', '0.479651', '0.479922', '0.479789'], 'correctness_issue': 'Output mismatch', 'correctness_trials': '(0 / 5)'} runtime=-1.0 runtime_stats={} ref_runtime=2.52 ref_runtime_stats={'mean': 2.52, 'std': 0.0575, 'min': 2.43, 'max': 2.85, 'num_trials': 100, 'hardware': '', 'device': 'cuda:7'}
+Adding Eval Result to file for problem 8 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Curr batch] Evaluation took 36.85 seconds
+[Curr Batch] 8 tasks over 8 GPUs; [Total Work left] 84
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+Traceback (most recent call last):
+  File "/sgl-workspace/KernelBench/src/kernelbench/eval.py", line 771, in run_and_check_correctness
+    output_new = model_new(*inputs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/tmp/tmpf46tj0wk.py", line 74, in forward
+    return triton_matmul(A.T, B)
+  File "/tmp/tmpf46tj0wk.py", line 51, in triton_matmul
+    assert a.is_contiguous(), "Matrix A must be contiguous"
+AssertionError: Matrix A must be contiguous
+Processing batches:  16%|█▌        | 16/100 [00:59<04:58,  3.55s/it][Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:3 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:3 , warm up 3, trials 100
+[WARNING] Excessive speedup 18.05x over 10x threshold detected
+[WARNING] Double check your kernel carefully to ensure it is not reward hacking.
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:5 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:6 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:4 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:0 , warm up 3, trials 100
+[Error] Exception happens during correctness check
+Error in launching kernel for ModelNew: Matrix A must be contiguous
+
+[Full Traceback]:
+
+
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:7 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:2 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:2 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:1 , warm up 3, trials 100
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 9, Sample ID: 0
+compiled=True correctness=False metadata={'hardware': '', 'device': 'cuda:0', 'max_difference': ['0.011737', '0.011279', '0.011305', '0.011332', '0.011762'], 'avg_difference': ['0.005214', '0.005206', '0.005207', '0.005207', '0.005204'], 'correctness_issue': 'Output mismatch', 'correctness_trials': '(0 / 5)'} runtime=-1.0 runtime_stats={} ref_runtime=1.38 ref_runtime_stats={'mean': 1.38, 'std': 0.0696, 'min': 1.27, 'max': 1.63, 'num_trials': 100, 'hardware': '', 'device': 'cuda:0'}
+Adding Eval Result to file for problem 9 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 10, Sample ID: 0
+compiled=True correctness=False metadata={'hardware': '', 'device': 'cuda:1', 'max_difference': ['0.371399', '0.369934', '0.371948', '0.370239', '0.368652'], 'avg_difference': ['0.333358', '0.333350', '0.332949', '0.333112', '0.333226'], 'correctness_issue': 'Output mismatch', 'correctness_trials': '(0 / 5)'} runtime=-1.0 runtime_stats={} ref_runtime=0.432 ref_runtime_stats={'mean': 0.432, 'std': 0.0159, 'min': 0.41, 'max': 0.515, 'num_trials': 100, 'hardware': '', 'device': 'cuda:1'}
+Adding Eval Result to file for problem 10 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 11, Sample ID: 0
+compiled=True correctness=True metadata={'hardware': '', 'device': 'cuda:2', 'correctness_trials': '(5 / 5)'} runtime=58.5 runtime_stats={'mean': 58.5, 'std': 0.102, 'min': 58.2, 'max': 58.8, 'num_trials': 100, 'hardware': '', 'device': 'cuda:2'} ref_runtime=3.98 ref_runtime_stats={'mean': 3.98, 'std': 0.0663, 'min': 3.91, 'max': 4.43, 'num_trials': 100, 'hardware': '', 'device': 'cuda:2'}
+Adding Eval Result to file for problem 11 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 12, Sample ID: 0
+compiled=True correctness=True metadata={'hardware': '', 'device': 'cuda:3', 'correctness_trials': '(5 / 5)', 'excessive_speedup': True} runtime=0.0565 runtime_stats={'mean': 0.0565, 'std': 0.00534, 'min': 0.0521, 'max': 0.0894, 'num_trials': 100, 'hardware': '', 'device': 'cuda:3'} ref_runtime=1.02 ref_runtime_stats={'mean': 1.02, 'std': 0.0562, 'min': 0.95, 'max': 1.3, 'num_trials': 100, 'hardware': '', 'device': 'cuda:3'}
+Adding Eval Result to file for problem 12 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 13, Sample ID: 0
+compiled=True correctness=False metadata={'hardware': '', 'device': 'cuda:4', 'max_difference': ['0.759033', '0.759033', '0.753784', '0.759033', '0.762207'], 'avg_difference': ['0.713907', '0.714208', '0.713810', '0.713811', '0.713704'], 'correctness_issue': 'Output mismatch', 'correctness_trials': '(0 / 5)'} runtime=-1.0 runtime_stats={} ref_runtime=1.14 ref_runtime_stats={'mean': 1.14, 'std': 0.0277, 'min': 1.1, 'max': 1.26, 'num_trials': 100, 'hardware': '', 'device': 'cuda:4'}
+Adding Eval Result to file for problem 13 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 14, Sample ID: 0
+compiled=True correctness=False metadata={'hardware': '', 'device': 'cuda:5', 'max_difference': ['0.693237', '0.701660', '0.703857', '0.689331', '0.700439'], 'avg_difference': ['0.111186', '0.111261', '0.111135', '0.111159', '0.111137'], 'correctness_issue': 'Output mismatch', 'correctness_trials': '(0 / 5)'} runtime=-1.0 runtime_stats={} ref_runtime=1.03 ref_runtime_stats={'mean': 1.03, 'std': 0.0439, 'min': 0.986, 'max': 1.3, 'num_trials': 100, 'hardware': '', 'device': 'cuda:5'}
+Adding Eval Result to file for problem 14 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 15, Sample ID: 0
+compiled=True correctness=False metadata={'hardware': '', 'device': 'cuda:6', 'max_difference': ['0.699097', '0.697266', '0.695068', '0.693115', '0.693604'], 'avg_difference': ['0.111194', '0.111177', '0.111155', '0.111153', '0.111154'], 'correctness_issue': 'Output mismatch', 'correctness_trials': '(0 / 5)'} runtime=-1.0 runtime_stats={} ref_runtime=1.06 ref_runtime_stats={'mean': 1.06, 'std': 0.047, 'min': 1.01, 'max': 1.35, 'num_trials': 100, 'hardware': '', 'device': 'cuda:6'}
+Adding Eval Result to file for problem 15 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 16, Sample ID: 0
+compiled=True correctness=False metadata={'hardware': '', 'device': 'cuda:7', 'runtime_error': 'Matrix A must be contiguous', 'runtime_error_name': 'builtins.AssertionError', 'runtime_error_traceback': 'Traceback (most recent call last):\n  File "/sgl-workspace/KernelBench/src/kernelbench/eval.py", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File "/tmp/tmpf46tj0wk.py", line 74, in forward\n    return triton_matmul(A.T, B)\n  File "/tmp/tmpf46tj0wk.py", line 51, in triton_matmul\n    assert a.is_contiguous(), "Matrix A must be contiguous"\nAssertionError: Matrix A must be contiguous\n'} runtime=-1.0 runtime_stats={} ref_runtime=1.17 ref_runtime_stats={'mean': 1.17, 'std': 0.045, 'min': 1.12, 'max': 1.4, 'num_trials': 100, 'hardware': '', 'device': 'cuda:7'}
+Adding Eval Result to file for problem 16 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Curr batch] Evaluation took 22.29 seconds
+[Curr Batch] 8 tasks over 8 GPUs; [Total Work left] 76
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+Traceback (most recent call last):
+  File "/sgl-workspace/KernelBench/src/kernelbench/eval.py", line 771, in run_and_check_correctness
+    output_new = model_new(*inputs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/tmp/tmpq6brgrqr.py", line 77, in forward
+    return triton_matmul(A.T, B.T)
+  File "/tmp/tmpq6brgrqr.py", line 52, in triton_matmul
+    assert a.is_contiguous(), "Matrix A must be contiguous"
+AssertionError: Matrix A must be contiguous
+Traceback (most recent call last):
+  File "/sgl-workspace/KernelBench/src/kernelbench/eval.py", line 771, in run_and_check_correctness
+    output_new = model_new(*inputs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/tmp/tmpb9labapz.py", line 82, in forward
+    return triton_matmul(A, B.T)
+  File "/tmp/tmpb9labapz.py", line 56, in triton_matmul
+    assert K == K_b
+AssertionError
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+Traceback (most recent call last):
+  File "/sgl-workspace/KernelBench/src/kernelbench/eval.py", line 771, in run_and_check_correctness
+    output_new = model_new(*inputs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/tmp/tmp2q_x2ewv.py", line 68, in forward
+    return triton_tanh(x)
+  File "/tmp/tmp2q_x2ewv.py", line 47, in triton_tanh
+    tanh_kernel[grid](x, out, n_elements, BLOCK_SIZE=BLOCK_SIZE)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 393, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 599, in run
+    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 782, in _do_compile
+    kernel = self.compile(src, target=target, options=options.__dict__)
+  File "/opt/venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 244, in compile
+    key = get_cache_key(src, backend, options, env_vars=env_vars)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/cache.py", line 308, in get_cache_key
+    key = f"{triton_key()}-{src.hash()}-{backend.hash()}-{backend_options.hash()}-{str(sorted(env_vars.items()))}"
+  File "/opt/venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 77, in hash
+    key = f"{self.fn.cache_key}-{str(self.attrs)}-{sorted_sig}-{constants_key}"
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 705, in cache_key
+    dependencies_finder.visit(self.parse())
+  File "/usr/lib/python3.10/ast.py", line 418, in visit
+    return visitor(node)
+  File "/usr/lib/python3.10/ast.py", line 426, in generic_visit
+    self.visit(item)
+  File "/usr/lib/python3.10/ast.py", line 418, in visit
+    return visitor(node)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 166, in visit_FunctionDef
+    self.generic_visit(node)
+  File "/usr/lib/python3.10/ast.py", line 426, in generic_visit
+    self.visit(item)
+  File "/usr/lib/python3.10/ast.py", line 418, in visit
+    return visitor(node)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 220, in visit_Assign
+    self.generic_visit(node)
+  File "/usr/lib/python3.10/ast.py", line 428, in generic_visit
+    self.visit(value)
+  File "/usr/lib/python3.10/ast.py", line 418, in visit
+    return visitor(node)
+  File "/usr/lib/python3.10/ast.py", line 428, in generic_visit
+    self.visit(value)
+  File "/usr/lib/python3.10/ast.py", line 418, in visit
+    return visitor(node)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 159, in visit_Attribute
+    ret = getattr(lhs, node.attr)
+AttributeError: module 'triton.language' has no attribute 'tanh'
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 17, Sample ID: 0
+compiled=True correctness=False metadata={'hardware': '', 'device': 'cuda:0', 'runtime_error': '', 'runtime_error_name': 'builtins.AssertionError', 'runtime_error_traceback': 'Traceback (most recent call last):\n  File "/sgl-workspace/KernelBench/src/kernelbench/eval.py", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File "/tmp/tmpb9labapz.py", line 82, in forward\n    return triton_matmul(A, B.T)\n  File "/tmp/tmpb9labapz.py", line 56, in triton_matmul\n    assert K == K_b\nAssertionError\n'} runtime=-1.0 runtime_stats={} ref_runtime=1.22 ref_runtime_stats={'mean': 1.22, 'std': 0.0522, 'min': 1.16, 'max': 1.46, 'num_trials': 100, 'hardware': '', 'device': 'cuda:0'}
+Adding Eval Result to file for problem 17 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 18, Sample ID: 0
+compiled=True correctness=False metadata={'hardware': '', 'device': 'cuda:1', 'runtime_error': 'Matrix A must be contiguous', 'runtime_error_name': 'builtins.AssertionError', 'runtime_error_traceback': 'Traceback (most recent call last):\n  File "/sgl-workspace/KernelBench/src/kernelbench/eval.py", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File "/tmp/tmpq6brgrqr.py", line 77, in forward\n    return triton_matmul(A.T, B.T)\n  File "/tmp/tmpq6brgrqr.py", line 52, in triton_matmul\n    assert a.is_contiguous(), "Matrix A must be contiguous"\nAssertionError: Matrix A must be contiguous\n'} runtime=-1.0 runtime_stats={} ref_runtime=4.56 ref_runtime_stats={'mean': 4.56, 'std': 0.0314, 'min': 4.5, 'max': 4.71, 'num_trials': 100, 'hardware': '', 'device': 'cuda:1'}
+Adding Eval Result to file for problem 18 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 19, Sample ID: 0
+compiled=True correctness=True metadata={'hardware': '', 'device': 'cuda:2', 'correctness_trials': '(5 / 5)'} runtime=3.35 runtime_stats={'mean': 3.35, 'std': 0.169, 'min': 3.19, 'max': 3.71, 'num_trials': 100, 'hardware': '', 'device': 'cuda:2'} ref_runtime=3.29 ref_runtime_stats={'mean': 3.29, 'std': 0.167, 'min': 3.01, 'max': 3.53, 'num_trials': 100, 'hardware': '', 'device': 'cuda:2'}
+Adding Eval Result to file for problem 19 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 20, Sample ID: 0
+compiled=True correctness=True metadata={'hardware': '', 'device': 'cuda:3', 'correctness_trials': '(5 / 5)'} runtime=3.27 runtime_stats={'mean': 3.27, 'std': 0.127, 'min': 3.18, 'max': 3.71, 'num_trials': 100, 'hardware': '', 'device': 'cuda:3'} ref_runtime=3.18 ref_runtime_stats={'mean': 3.18, 'std': 0.159, 'min': 3.06, 'max': 3.58, 'num_trials': 100, 'hardware': '', 'device': 'cuda:3'}
+Adding Eval Result to file for problem 20 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 21, Sample ID: 0
+compiled=True correctness=True metadata={'hardware': '', 'device': 'cuda:4', 'correctness_trials': '(5 / 5)'} runtime=3.63 runtime_stats={'mean': 3.63, 'std': 0.16, 'min': 3.33, 'max': 3.89, 'num_trials': 100, 'hardware': '', 'device': 'cuda:4'} ref_runtime=3.52 ref_runtime_stats={'mean': 3.52, 'std': 0.0523, 'min': 3.24, 'max': 3.57, 'num_trials': 100, 'hardware': '', 'device': 'cuda:4'}
+Adding Eval Result to file for problem 21 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 22, Sample ID: 0
+compiled=True correctness=False metadata={'hardware': '', 'device': 'cuda:5', 'runtime_error': "module 'triton.language' has no attribute 'tanh'", 'runtime_error_name': 'builtins.AttributeError', 'runtime_error_traceback': 'Traceback (most recent call last):\n  File "/sgl-workspace/KernelBench/src/kernelbench/eval.py", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File "/tmp/tmp2q_x2ewv.py", line 68, in forward\n    return triton_tanh(x)\n  File "/tmp/tmp2q_x2ewv.py", line 47, in triton_tanh\n    tanh_kernel[grid](x, out, n_elements, BLOCK_SIZE=BLOCK_SIZE)\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 393, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 599, in run\n    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 782, in _do_compile\n    kernel = self.compile(src, target=target, options=options.__dict__)\n  File "/opt/venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 244, in compile\n    key = get_cache_key(src, backend, options, env_vars=env_vars)\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/cache.py", line 308, in get_cache_key\n    key = f"{triton_key()}-{src.hash()}-{backend.hash()}-{backend_options.hash()}-{str(sorted(env_vars.items()))}"\n  File "/opt/venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 77, in hash\n    key = f"{self.fn.cache_key}-{str(self.attrs)}-{sorted_sig}-{constants_key}"\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 705, in cache_key\n    dependencies_finder.visit(self.parse())\n  File "/usr/lib/python3.10/ast.py", line 418, in visit\n    return visitor(node)\n  File "/usr/lib/python3.10/ast.py", line 426, in generic_visit\n    self.visit(item)\n  File "/usr/lib/python3.10/ast.py", line 418, in visit\n    return visitor(node)\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 166, in visit_FunctionDef\n    self.generic_visit(node)\n  File "/usr/lib/python3.10/ast.py", line 426, in generic_visit\n    self.visit(item)\n  File "/usr/lib/python3.10/ast.py", line 418, in visit\n    return visitor(node)\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 220, in visit_Assign\n    self.generic_visit(node)\n  File "/usr/lib/python3.10/ast.py", line 428, in generic_visit\n    self.visit(value)\n  File "/usr/lib/python3.10/ast.py", line 418, in visit\n    return visitor(node)\n  File "/usr/lib/python3.10/ast.py", line 428, in generic_visit\n    self.visit(value)\n  File "/usr/lib/python3.10/ast.py", line 418, in visit\n    return visitor(node)\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 159, in visit_Attribute\n    ret = getattr(lhs, node.attr)\nAttributeError: module \'triton.language\' has no attribute \'tanh\'\n'} runtime=-1.0 runtime_stats={} ref_runtime=3.5 ref_runtime_stats={'mean': 3.5, 'std': 0.0505, 'min': 3.47, 'max': 3.93, 'num_trials': 100, 'hardware': '', 'device': 'cuda:5'}
+Adding Eval Result to file for problem 22 sample 0
+Processing batches:  24%|██▍       | 24/100 [01:53<06:21,  5.03s/it][Error] Exception happens during correctness check
+Error in launching kernel for ModelNew: Matrix A must be contiguous
+
+[Full Traceback]:
+
+
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:1 , warm up 3, trials 100
+[Error] Exception happens during correctness check
+Error in launching kernel for ModelNew: 
+
+[Full Traceback]:
+
+
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:0 , warm up 3, trials 100
+[Error] Exception happens during correctness check
+Error in launching kernel for ModelNew: module 'triton.language' has no attribute 'tanh'
+
+[Full Traceback]:
+
+
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:5 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:3 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:3 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:2 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:2 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:4 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:4 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:6 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:6 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:7 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:7 , warm up 3, trials 100
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 23, Sample ID: 0
+compiled=True correctness=True metadata={'hardware': '', 'device': 'cuda:6', 'correctness_trials': '(5 / 5)'} runtime=7.49 runtime_stats={'mean': 7.49, 'std': 0.161, 'min': 7.21, 'max': 7.84, 'num_trials': 100, 'hardware': '', 'device': 'cuda:6'} ref_runtime=7.0 ref_runtime_stats={'mean': 7.0, 'std': 0.14, 'min': 6.78, 'max': 7.37, 'num_trials': 100, 'hardware': '', 'device': 'cuda:6'}
+Adding Eval Result to file for problem 23 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 24, Sample ID: 0
+compiled=True correctness=True metadata={'hardware': '', 'device': 'cuda:7', 'correctness_trials': '(5 / 5)'} runtime=7.26 runtime_stats={'mean': 7.26, 'std': 0.133, 'min': 6.94, 'max': 7.6, 'num_trials': 100, 'hardware': '', 'device': 'cuda:7'} ref_runtime=7.12 ref_runtime_stats={'mean': 7.12, 'std': 0.174, 'min': 6.79, 'max': 7.44, 'num_trials': 100, 'hardware': '', 'device': 'cuda:7'}
+Adding Eval Result to file for problem 24 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Curr batch] Evaluation took 54.06 seconds
+[Curr Batch] 8 tasks over 8 GPUs; [Total Work left] 68
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+Traceback (most recent call last):
+  File "/sgl-workspace/KernelBench/src/kernelbench/eval.py", line 771, in run_and_check_correctness
+    output_new = model_new(*inputs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/tmp/tmpbbgvu9rh.py", line 77, in forward
+    return triton_gelu(x)
+  File "/tmp/tmpbbgvu9rh.py", line 56, in triton_gelu
+    gelu_kernel[grid](x, out, n_elements, BLOCK_SIZE=BLOCK_SIZE)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 393, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 599, in run
+    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 782, in _do_compile
+    kernel = self.compile(src, target=target, options=options.__dict__)
+  File "/opt/venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 244, in compile
+    key = get_cache_key(src, backend, options, env_vars=env_vars)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/cache.py", line 308, in get_cache_key
+    key = f"{triton_key()}-{src.hash()}-{backend.hash()}-{backend_options.hash()}-{str(sorted(env_vars.items()))}"
+  File "/opt/venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 77, in hash
+    key = f"{self.fn.cache_key}-{str(self.attrs)}-{sorted_sig}-{constants_key}"
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 705, in cache_key
+    dependencies_finder.visit(self.parse())
+  File "/usr/lib/python3.10/ast.py", line 418, in visit
+    return visitor(node)
+  File "/usr/lib/python3.10/ast.py", line 426, in generic_visit
+    self.visit(item)
+  File "/usr/lib/python3.10/ast.py", line 418, in visit
+    return visitor(node)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 166, in visit_FunctionDef
+    self.generic_visit(node)
+  File "/usr/lib/python3.10/ast.py", line 426, in generic_visit
+    self.visit(item)
+  File "/usr/lib/python3.10/ast.py", line 418, in visit
+    return visitor(node)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 220, in visit_Assign
+    self.generic_visit(node)
+  File "/usr/lib/python3.10/ast.py", line 428, in generic_visit
+    self.visit(value)
+  File "/usr/lib/python3.10/ast.py", line 418, in visit
+    return visitor(node)
+  File "/usr/lib/python3.10/ast.py", line 428, in generic_visit
+    self.visit(value)
+  File "/usr/lib/python3.10/ast.py", line 418, in visit
+    return visitor(node)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 154, in visit_Attribute
+    lhs = self.visit(node.value)
+  File "/usr/lib/python3.10/ast.py", line 418, in visit
+    return visitor(node)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 159, in visit_Attribute
+    ret = getattr(lhs, node.attr)
+AttributeError: module 'triton.language' has no attribute 'libdevice'
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 25, Sample ID: 0
+compiled=True correctness=True metadata={'hardware': '', 'device': 'cuda:0', 'correctness_trials': '(5 / 5)'} runtime=3.77 runtime_stats={'mean': 3.77, 'std': 0.141, 'min': 3.45, 'max': 4.13, 'num_trials': 100, 'hardware': '', 'device': 'cuda:0'} ref_runtime=8.61 ref_runtime_stats={'mean': 8.61, 'std': 0.174, 'min': 8.38, 'max': 9.95, 'num_trials': 100, 'hardware': '', 'device': 'cuda:0'}
+Adding Eval Result to file for problem 25 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 26, Sample ID: 0
+compiled=True correctness=False metadata={'hardware': '', 'device': 'cuda:1', 'runtime_error': "module 'triton.language' has no attribute 'libdevice'", 'runtime_error_name': 'builtins.AttributeError', 'runtime_error_traceback': 'Traceback (most recent call last):\n  File "/sgl-workspace/KernelBench/src/kernelbench/eval.py", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File "/tmp/tmpbbgvu9rh.py", line 77, in forward\n    return triton_gelu(x)\n  File "/tmp/tmpbbgvu9rh.py", line 56, in triton_gelu\n    gelu_kernel[grid](x, out, n_elements, BLOCK_SIZE=BLOCK_SIZE)\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 393, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 599, in run\n    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 782, in _do_compile\n    kernel = self.compile(src, target=target, options=options.__dict__)\n  File "/opt/venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 244, in compile\n    key = get_cache_key(src, backend, options, env_vars=env_vars)\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/cache.py", line 308, in get_cache_key\n    key = f"{triton_key()}-{src.hash()}-{backend.hash()}-{backend_options.hash()}-{str(sorted(env_vars.items()))}"\n  File "/opt/venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 77, in hash\n    key = f"{self.fn.cache_key}-{str(self.attrs)}-{sorted_sig}-{constants_key}"\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 705, in cache_key\n    dependencies_finder.visit(self.parse())\n  File "/usr/lib/python3.10/ast.py", line 418, in visit\n    return visitor(node)\n  File "/usr/lib/python3.10/ast.py", line 426, in generic_visit\n    self.visit(item)\n  File "/usr/lib/python3.10/ast.py", line 418, in visit\n    return visitor(node)\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 166, in visit_FunctionDef\n    self.generic_visit(node)\n  File "/usr/lib/python3.10/ast.py", line 426, in generic_visit\n    self.visit(item)\n  File "/usr/lib/python3.10/ast.py", line 418, in visit\n    return visitor(node)\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 220, in visit_Assign\n    self.generic_visit(node)\n  File "/usr/lib/python3.10/ast.py", line 428, in generic_visit\n    self.visit(value)\n  File "/usr/lib/python3.10/ast.py", line 418, in visit\n    return visitor(node)\n  File "/usr/lib/python3.10/ast.py", line 428, in generic_visit\n    self.visit(value)\n  File "/usr/lib/python3.10/ast.py", line 418, in visit\n    return visitor(node)\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 154, in visit_Attribute\n    lhs = self.visit(node.value)\n  File "/usr/lib/python3.10/ast.py", line 418, in visit\n    return visitor(node)\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 159, in visit_Attribute\n    ret = getattr(lhs, node.attr)\nAttributeError: module \'triton.language\' has no attribute \'libdevice\'\n'} runtime=-1.0 runtime_stats={} ref_runtime=3.3 ref_runtime_stats={'mean': 3.3, 'std': 0.169, 'min': 3.03, 'max': 3.54, 'num_trials': 100, 'hardware': '', 'device': 'cuda:1'}
+Adding Eval Result to file for problem 26 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 27, Sample ID: 0
+compiled=True correctness=True metadata={'hardware': '', 'device': 'cuda:2', 'correctness_trials': '(5 / 5)'} runtime=3.57 runtime_stats={'mean': 3.57, 'std': 0.184, 'min': 3.29, 'max': 3.89, 'num_trials': 100, 'hardware': '', 'device': 'cuda:2'} ref_runtime=3.24 ref_runtime_stats={'mean': 3.24, 'std': 0.187, 'min': 3.0, 'max': 3.53, 'num_trials': 100, 'hardware': '', 'device': 'cuda:2'}
+Adding Eval Result to file for problem 27 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 28, Sample ID: 0
+compiled=True correctness=True metadata={'hardware': '', 'device': 'cuda:3', 'correctness_trials': '(5 / 5)'} runtime=3.24 runtime_stats={'mean': 3.24, 'std': 0.0696, 'min': 3.18, 'max': 3.67, 'num_trials': 100, 'hardware': '', 'device': 'cuda:3'} ref_runtime=3.15 ref_runtime_stats={'mean': 3.15, 'std': 0.135, 'min': 3.07, 'max': 3.58, 'num_trials': 100, 'hardware': '', 'device': 'cuda:3'}
+Adding Eval Result to file for problem 28 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 29, Sample ID: 0
+compiled=True correctness=True metadata={'hardware': '', 'device': 'cuda:4', 'correctness_trials': '(5 / 5)'} runtime=3.6 runtime_stats={'mean': 3.6, 'std': 0.172, 'min': 3.31, 'max': 3.9, 'num_trials': 100, 'hardware': '', 'device': 'cuda:4'} ref_runtime=7.49 ref_runtime_stats={'mean': 7.49, 'std': 0.0945, 'min': 7.39, 'max': 8.24, 'num_trials': 100, 'hardware': '', 'device': 'cuda:4'}
+Adding Eval Result to file for problem 29 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 30, Sample ID: 0
+compiled=True correctness=True metadata={'hardware': '', 'device': 'cuda:5', 'correctness_trials': '(5 / 5)'} runtime=3.62 runtime_stats={'mean': 3.62, 'std': 0.149, 'min': 3.34, 'max': 3.84, 'num_trials': 100, 'hardware': '', 'device': 'cuda:5'} ref_runtime=11.5 ref_runtime_stats={'mean': 11.5, 'std': 0.166, 'min': 11.2, 'max': 12.7, 'num_trials': 100, 'hardware': '', 'device': 'cuda:5'}
+Adding Eval Result to file for problem 30 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 31, Sample ID: 0
+compiled=True correctness=True metadata={'hardware': '', 'device': 'cuda:6', 'correctness_trials': '(5 / 5)'} runtime=3.48 runtime_stats={'mean': 3.48, 'std': 0.189, 'min': 3.26, 'max': 3.8, 'num_trials': 100, 'hardware': '', 'device': 'cuda:6'} ref_runtime=3.17 ref_runtime_stats={'mean': 3.17, 'std': 0.183, 'min': 3.02, 'max': 3.53, 'num_trials': 100, 'hardware': '', 'device': 'cuda:6'}
+Adding Eval Result to file for problem 31 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 32, Sample ID: 0
+Processing batches:  32%|███▏      | 32/100 [02:48<06:31,  5.76s/it][Error] Exception happens during correctness check
+Error in launching kernel for ModelNew: module 'triton.language' has no attribute 'libdevice'
+
+[Full Traceback]:
+
+
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:1 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:2 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:2 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:0 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:0 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:3 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:3 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:7 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:7 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:6 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:6 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:5 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:5 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:4 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:4 , warm up 3, trials 100
+compiled=True correctness=True metadata={'hardware': '', 'device': 'cuda:7', 'correctness_trials': '(5 / 5)'} runtime=3.36 runtime_stats={'mean': 3.36, 'std': 0.174, 'min': 3.19, 'max': 3.69, 'num_trials': 100, 'hardware': '', 'device': 'cuda:7'} ref_runtime=3.32 ref_runtime_stats={'mean': 3.32, 'std': 0.165, 'min': 3.02, 'max': 3.53, 'num_trials': 100, 'hardware': '', 'device': 'cuda:7'}
+Adding Eval Result to file for problem 32 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Curr batch] Evaluation took 54.98 seconds
+[Curr Batch] 8 tasks over 8 GPUs; [Total Work left] 60
+/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1357: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return t.to(
+/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1357: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return t.to(
+/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1357: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return t.to(
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.10/site-packages/triton/language/core.py", line 43, in wrapper
+    return fn(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/triton/language/core.py", line 1659, in arange
+    return _semantic.arange(start, end)
+  File "/opt/venv/lib/python3.10/site-packages/triton/language/semantic.py", line 586, in arange
+    ret_ty = tl.block_type(tl.int32, shape)
+  File "/opt/venv/lib/python3.10/site-packages/triton/language/core.py", line 728, in __init__
+    self.numel = validate_block_shape(self.shape)
+  File "/opt/venv/lib/python3.10/site-packages/triton/_utils.py", line 56, in validate_block_shape
+    raise ValueError(f"numel ({numel}) exceeds triton maximum tensor numel ({TRITON_MAX_TENSOR_NUMEL})")
+ValueError: numel (4194304) exceeds triton maximum tensor numel (1048576)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/sgl-workspace/KernelBench/src/kernelbench/eval.py", line 771, in run_and_check_correctness
+    output_new = model_new(*inputs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/tmp/tmpjcoe57b2.py", line 125, in forward
+    return triton_layer_norm(x, self.normalized_shape, self.weight, self.bias, self.eps)
+  File "/tmp/tmpjcoe57b2.py", line 89, in triton_layer_norm
+    layer_norm_kernel[grid](
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 393, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 599, in run
+    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 782, in _do_compile
+    kernel = self.compile(src, target=target, options=options.__dict__)
+  File "/opt/venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 302, in compile
+    module = src.make_ir(target, options, codegen_fns, module_map, context)
+  File "/opt/venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 82, in make_ir
+    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,
+triton.compiler.errors.CompilationError: at 18:14:
+    rstd_ptr,
+    n_rows,
+    n_cols,
+    eps: tl.constexpr,
+    BLOCK_SIZE: tl.constexpr,
+):
+    # Each program handles one row
+    row_idx = tl.program_id(0)
+
+    # Compute offsets for this row
+    row_start = row_idx * n_cols
+    offsets = tl.arange(0, BLOCK_SIZE)
+              ^
+numel (4194304) exceeds triton maximum tensor numel (1048576)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+Traceback (most recent call last):
+  File "/sgl-workspace/KernelBench/src/kernelbench/eval.py", line 771, in run_and_check_correctness
+    output_new = model_new(*inputs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/tmp/tmpnee0mkap.py", line 259, in forward
+    return self.gn(x)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/tmp/tmpnee0mkap.py", line 231, in forward
+    return triton_group_norm(x, weight, bias, self.num_groups, self.eps)
+  File "/tmp/tmpnee0mkap.py", line 198, in triton_group_norm
+    group_norm_kernel_fused[grid](
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 393, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 599, in run
+    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 782, in _do_compile
+    kernel = self.compile(src, target=target, options=options.__dict__)
+  File "/opt/venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 302, in compile
+    module = src.make_ir(target, options, codegen_fns, module_map, context)
+  File "/opt/venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 82, in make_ir
+    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,
+triton.compiler.errors.CompilationError: at 30:8:
+    # Calculate channel range for this group
+    channels_per_group = num_channels // num_groups
+    start_channel = group_idx * channels_per_group
+    end_channel = start_channel + channels_per_group
+
+    # Use shared memory for reduction
+    # First pass: compute mean
+    sum_val = 0.0
+    count = 0
+
+    for c in range(start_channel, end_channel):
+        for s in range(0, spatial_size, BLOCK_SIZE):
+        ^
+AssertionError('Loop-carried variable count has initial type int32 but is re-assigned to fp32 in loop! Please make sure that the type stays consistent.')
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+Traceback (most recent call last):
+  File "/sgl-workspace/KernelBench/src/kernelbench/eval.py", line 771, in run_and_check_correctness
+    output_new = model_new(*inputs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/tmp/tmpk1a0lf4z.py", line 117, in forward
+    return triton_rms_norm(x, self.eps)
+  File "/tmp/tmpk1a0lf4z.py", line 82, in triton_rms_norm
+    rms_norm_kernel[grid](
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 393, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 623, in run
+    kernel.run(grid_0, grid_1, grid_2, stream, kernel.function, kernel.packed_metadata, launch_metadata,
+  File "/opt/venv/lib/python3.10/site-packages/triton/backends/amd/driver.py", line 644, in __call__
+    self.launch(self.launch_cooperative_grid, gridX, gridY, gridZ, stream, function, profile_scratch, *args)
+RuntimeError: Triton Error [HIP]:  Code: 1, Messsage: invalid argument
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 33, Sample ID: 0
+compiled=True correctness=True metadata={'hardware': '', 'device': 'cuda:0', 'correctness_trials': '(5 / 5)'} runtime=55.9 runtime_stats={'mean': 55.9, 'std': 0.0822, 'min': 55.7, 'max': 56.2, 'num_trials': 100, 'hardware': '', 'device': 'cuda:0'} ref_runtime=10.3 ref_runtime_stats={'mean': 10.3, 'std': 0.0505, 'min': 10.2, 'max': 10.5, 'num_trials': 100, 'hardware': '', 'device': 'cuda:0'}
+Adding Eval Result to file for problem 33 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 34, Sample ID: 0
+compiled=True correctness=True metadata={'hardware': '', 'device': 'cuda:1', 'correctness_trials': '(5 / 5)'} runtime=8.22 runtime_stats={'mean': 8.22, 'std': 0.136, 'min': 7.9, 'max': 8.56, 'num_trials': 100, 'hardware': '', 'device': 'cuda:1'} ref_runtime=6.66 ref_runtime_stats={'mean': 6.66, 'std': 0.244, 'min': 6.1, 'max': 7.24, 'num_trials': 100, 'hardware': '', 'device': 'cuda:1'}
+Adding Eval Result to file for problem 34 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 35, Sample ID: 0
+compiled=True correctness=False metadata={'hardware': '', 'device': 'cuda:2', 'runtime_error': 'at 30:8:\n    # Calculate channel range for this group\n    channels_per_group = num_channels // num_groups\n    start_channel = group_idx * channels_per_group\n    end_channel = start_channel + channe...', 'runtime_error_name': 'triton.compiler.errors.CompilationError', 'runtime_error_traceback': 'Traceback (most recent call last):\n  File "/sgl-workspace/KernelBench/src/kernelbench/eval.py", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File "/tmp/tmpnee0mkap.py", line 259, in forward\n    return self.gn(x)\n  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File "/tmp/tmpnee0mkap.py", line 231, in forward\n    return triton_group_norm(x, weight, bias, self.num_groups, self.eps)\n  File "/tmp/tmpnee0mkap.py", line 198, in triton_group_norm\n    group_norm_kernel_fused[grid](\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 393, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 599, in run\n    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 782, in _do_compile\n    kernel = self.compile(src, target=target, options=options.__dict__)\n  File "/opt/venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 302, in compile\n    module = src.make_ir(target, options, codegen_fns, module_map, context)\n  File "/opt/venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 82, in make_ir\n    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,\ntriton.compiler.errors.CompilationError: at 30:8:\n    # Calculate channel range for this group\n    channels_per_group = num_channels // num_groups\n    start_channel = group_idx * channels_per_group\n    end_channel = start_channel + channels_per_group\n\n    # Use shared memory for reduction\n    # First pass: compute mean\n    sum_val = 0.0\n    count = 0\n\n    for c in range(start_channel, end_channel):\n        for s in range(0, spatial_size, BLOCK_SIZE):\n        ^\nAssertionError(\'Loop-carried variable count has initial type int32 but is re-assigned to fp32 in loop! Please make sure that the type stays consistent.\')\n'} runtime=-1.0 runtime_stats={} ref_runtime=7.38 ref_runtime_stats={'mean': 7.38, 'std': 0.14, 'min': 7.12, 'max': 7.72, 'num_trials': 100, 'hardware': '', 'device': 'cuda:2'}
+Adding Eval Result to file for problem 35 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 36, Sample ID: 0
+compiled=False correctness=False metadata={'other_error': "error: HIP error: invalid argument\nSearch for `hipErrorInvalidValue' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__HIPRT__TYPES.html for more information.\nHIP kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing AMD_SERIALIZE_KERNEL=3\nCompile with `TORCH_USE_HIP_DSA` to enable device-side assertions.\n", 'other_error_name': 'torch.AcceleratorError', 'hardware': '', 'device': 'cuda:3'} runtime=-1.0 runtime_stats={} ref_runtime=-1.0 ref_runtime_stats={}
+Adding Eval Result to file for problem 36 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 37, Sample ID: 0
+compiled=True correctness=True metadata={'hardware': '', 'device': 'cuda:4', 'correctness_trials': '(5 / 5)'} runtime=5.91 runtime_stats={'mean': 5.91, 'std': 0.215, 'min': 5.62, 'max': 6.27, 'num_trials': 100, 'hardware': '', 'device': 'cuda:4'} ref_runtime=6.75 ref_runtime_stats={'mean': 6.75, 'std': 0.104, 'min': 6.45, 'max': 7.0, 'num_trials': 100, 'hardware': '', 'device': 'cuda:4'}
+Adding Eval Result to file for problem 37 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 38, Sample ID: 0
+compiled=True correctness=True metadata={'hardware': '', 'device': 'cuda:5', 'correctness_trials': '(5 / 5)'} runtime=7.96 runtime_stats={'mean': 7.96, 'std': 0.0947, 'min': 7.75, 'max': 8.37, 'num_trials': 100, 'hardware': '', 'device': 'cuda:5'} ref_runtime=11.7 ref_runtime_stats={'mean': 11.7, 'std': 0.246, 'min': 11.1, 'max': 12.3, 'num_trials': 100, 'hardware': '', 'device': 'cuda:5'}
+Adding Eval Result to file for problem 38 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 39, Sample ID: 0
+compiled=True correctness=True metadata={'hardware': '', 'device': 'cuda:6', 'correctness_trials': '(5 / 5)'} runtime=7.88 runtime_stats={'mean': 7.88, 'std': 0.12, 'min': 7.66, 'max': 8.14, 'num_trials': 100, 'hardware': '', 'device': 'cuda:6'} ref_runtime=7.34 ref_runtime_stats={'mean': 7.34, 'std': 0.219, 'min': 7.1, 'max': 9.26, 'num_trials': 100, 'hardware': '', 'device': 'cuda:6'}
+Adding Eval Result to file for problem 39 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Eval Result] Problem ID: 40, Sample ID: 0
+Processing batches:  40%|████      | 40/100 [04:06<07:11,  7.19s/it][Error] Exception happens during correctness check
+Error in launching kernel for ModelNew: at 18:14:
+    rstd_ptr,
+    n_rows,
+    n_cols,
+    eps: tl.constexpr,
+    BLOCK_SIZE: tl.constexpr,
+):
+    # Each program handles one row
+    row_idx = tl.program_id(0)
+
+    # Compute offsets for this row
+    row_start = row_idx * n_cols
+    offsets = tl.arange(0, BLOCK_SIZE)
+              ^
+numel (4194304) exceeds triton maximum tensor numel (1048576)
+
+[Full Traceback]:
+
+
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:7 , warm up 3, trials 100
+[Error] Exception happens during correctness check
+Error in launching kernel for ModelNew: Triton Error [HIP]:  Code: 1, Messsage: invalid argument
+
+[Full Traceback]:
+
+
+[Profiling] Using timing method: cuda_event
+[WARNING] Last level catch on 0: Some issue evaluating for kernel: HIP error: invalid argument
+Search for `hipErrorInvalidValue' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__HIPRT__TYPES.html for more information.
+HIP kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing AMD_SERIALIZE_KERNEL=3
+Compile with `TORCH_USE_HIP_DSA` to enable device-side assertions.
+ 
+[Error] Exception happens during correctness check
+Error in launching kernel for ModelNew: at 30:8:
+    # Calculate channel range for this group
+    channels_per_group = num_channels // num_groups
+    start_channel = group_idx * channels_per_group
+    end_channel = start_channel + channels_per_group
+
+    # Use shared memory for reduction
+    # First pass: compute mean
+    sum_val = 0.0
+    count = 0
+
+    for c in range(start_channel, end_channel):
+        for s in range(0, spatial_size, BLOCK_SIZE):
+        ^
+AssertionError('Loop-carried variable count has initial type int32 but is re-assigned to fp32 in loop! Please make sure that the type stays consistent.')
+
+[Full Traceback]:
+
+
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:2 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:0 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:0 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:4 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:4 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:1 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:1 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:6 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:6 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:5 , warm up 3, trials 100
+[Profiling] Using timing method: cuda_event
+[Profiling] Using device: cuda:5 , warm up 3, trials 100
+compiled=True correctness=False metadata={'hardware': '', 'device': 'cuda:7', 'runtime_error': 'at 18:14:\n    rstd_ptr,\n    n_rows,\n    n_cols,\n    eps: tl.constexpr,\n    BLOCK_SIZE: tl.constexpr,\n):\n    # Each program handles one row\n    row_idx = tl.program_id(0)\n\n    # Compute offsets for ...', 'runtime_error_name': 'triton.compiler.errors.CompilationError', 'runtime_error_traceback': 'Traceback (most recent call last):\n  File "/opt/venv/lib/python3.10/site-packages/triton/language/core.py", line 43, in wrapper\n    return fn(*args, **kwargs)\n  File "/opt/venv/lib/python3.10/site-packages/triton/language/core.py", line 1659, in arange\n    return _semantic.arange(start, end)\n  File "/opt/venv/lib/python3.10/site-packages/triton/language/semantic.py", line 586, in arange\n    ret_ty = tl.block_type(tl.int32, shape)\n  File "/opt/venv/lib/python3.10/site-packages/triton/language/core.py", line 728, in __init__\n    self.numel = validate_block_shape(self.shape)\n  File "/opt/venv/lib/python3.10/site-packages/triton/_utils.py", line 56, in validate_block_shape\n    raise ValueError(f"numel ({numel}) exceeds triton maximum tensor numel ({TRITON_MAX_TENSOR_NUMEL})")\nValueError: numel (4194304) exceeds triton maximum tensor numel (1048576)\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File "/sgl-workspace/KernelBench/src/kernelbench/eval.py", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File "/tmp/tmpjcoe57b2.py", line 125, in forward\n    return triton_layer_norm(x, self.normalized_shape, self.weight, self.bias, self.eps)\n  File "/tmp/tmpjcoe57b2.py", line 89, in triton_layer_norm\n    layer_norm_kernel[grid](\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 393, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 599, in run\n    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)\n  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 782, in _do_compile\n    kernel = self.compile(src, target=target, options=options.__dict__)\n  File "/opt/venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 302, in compile\n    module = src.make_ir(target, options, codegen_fns, module_map, context)\n  File "/opt/venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 82, in make_ir\n    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,\ntriton.compiler.errors.CompilationError: at 18:14:\n    rstd_ptr,\n    n_rows,\n    n_cols,\n    eps: tl.constexpr,\n    BLOCK_SIZE: tl.constexpr,\n):\n    # Each program handles one row\n    row_idx = tl.program_id(0)\n\n    # Compute offsets for this row\n    row_start = row_idx * n_cols\n    offsets = tl.arange(0, BLOCK_SIZE)\n              ^\nnumel (4194304) exceeds triton maximum tensor numel (1048576)\n'} runtime=-1.0 runtime_stats={} ref_runtime=3.69 ref_runtime_stats={'mean': 3.69, 'std': 0.0108, 'min': 3.66, 'max': 3.72, 'num_trials': 100, 'hardware': '', 'device': 'cuda:7'}
+Adding Eval Result to file for problem 40 sample 0
+--------------------------------------------------------------------------------------------------------------------------------
+[Curr batch] Evaluation took 77.50 seconds
+[Curr Batch] 8 tasks over 8 GPUs; [Total Work left] 52
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+Traceback (most recent call last):
+  File "/sgl-workspace/KernelBench/src/kernelbench/eval.py", line 771, in run_and_check_correctness
+    output_new = model_new(*inputs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/tmp/tmpxc63sppf.py", line 174, in forward
+    return triton_max_pool3d(
+  File "/tmp/tmpxc63sppf.py", line 106, in triton_max_pool3d
+    max_pool3d_kernel[grid](
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 393, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 588, in run
+    bound_args, specialization, options = binder(*args, **kwargs)
+TypeError: dynamic_func() missing 3 required positional arguments: 'BLOCK_D1', 'BLOCK_D2', and 'BLOCK_D3'
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+/sgl-workspace/KernelBench/src/kernelbench/eval.py:391: UserWarning: expandable_segments not supported on this platform (Triggered internally at /app/pytorch/c10/hip/HIPAllocatorConfig.h:36.)
+  return input_tensor.to(device=device)
+Traceback (most recent call last):
+  File "/sgl-workspace/KernelBench/src/kernelbench/eval.py", line 771, in run_and_check_correctness
+    output_new = model_new(*inputs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/tmp/tmpr144is7c.py", line 169, in forward
+    return triton_avg_pool3d(x, self.kernel_size, self.stride, self.padding)
+  File "/tmp/tmpr144is7c.py", line 128, in triton_avg_pool3d
+    avg_pool3d_kernel[grid](
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 393, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 599, in run
+    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)
+  File "/opt/venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 782, in _do_compile
+    kernel = self.compile(src, target=target, options=options.__dict__)
+  File "/opt/venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 302, in compile
+    module = src.make_ir(target, options, codegen_fns, module_map, context)
+  File "/opt/venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 82, in make_ir
+    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,
+triton.compiler.errors.UnsupportedLanguageConstruct: at 59:19:
+    count = 0
+
+    # Iterate over kernel
+    for kd in range(kernel_d):
+        in_d = in_d_start + kd
+        for kh in range(kernel_h):
+            in_h = in_h_start + kh
+            for kw in range(kernel_w):
+                in_w = in_w_start + kw
+
+                # Check bounds
+                if 0 <= in_d < depth_in and 0 <= in_h < height_in and 0 <= in_w < width_in:
+                   ^
+simultaneous multiple comparison is not supported
+Memory access fault by GPU node-8 (Agent handle: 0x59b634aec180) on address 0x7ffd03d53000. Reason: Unknown.
+HW Exception by GPU node-8 (Agent handle: 0x5e0fae71f100) reason :GPU Hang
+HW Exception by GPU node-8 (Agent handle: 0x647bd1092fa0) reason :GPU Hang
+HW Exception by GPU node-8 (Agent handle: 0x60508820dfc0) reason :GPU Hang
+HW Exception by GPU node-8 (Agent handle: 0x5cf95c84a4c0) reason :GPU Hang
+HW Exception by GPU node-8 (Agent handle: 0x5b6a33c37e50) reason :GPU Hang
+HW Exception by GPU node-8 (Agent handle: 0x5895a0180690) reason :GPU Hang
+HW Exception by GPU node-8 (Agent handle: 0x5b064b58cc00) reason :GPU Hang
+HW Exception by GPU node-8 (Agent handle: 0x584b08cd3150) reason :GPU Hang
+scripts/mi300_k2_5_eval.sh: line 59: 663346 Aborted                 (core dumped) ${PYTHON_RUNNER} scripts/eval_from_generations.py "${ARGS[@]}"
+/usr/lib/python3.10/multiprocessing/resource_tracker.py:224: UserWarning: resource_tracker: There appear to be 7 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

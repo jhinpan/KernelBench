@@ -5,6 +5,10 @@ A List of GPU Specs to include in the prompt
 
 
 GPU_SPEC_INFO = {
+    "MI300X": {
+        "GPU Architecture": "CDNA3 (gfx942)",
+        "GPU Memory": "192GB HBM3",
+    },
     "L40S": {
         "GPU Architecture": "Ada",
         "GPU Memory": "48GB GDDR6 with ECC",

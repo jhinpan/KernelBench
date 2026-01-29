@@ -1,0 +1,9 @@
+Starting Batch Generation with config: EvalConfig({'dataset_src': 'huggingface', 'dataset_name': 'ScalingIntelligence/KernelBench', 'level': 2, 'subset': [40, 40], 'run_name': 'mi300_k2_5_level2', 'num_workers': 1, 'api_query_interval': 0.0, 'server_type': 'mi300_k2_5', 'model_name': '/data/Kimi-K2.5', 'max_tokens': 8192, 'temperature': 0.2, 'is_reasoning_model': False, 'reasoning_effort': 'low', 'budget_tokens': 0, 'runs_dir': '/sgl-workspace/KernelBench/runs', 'verbose': False, 'store_type': 'local', 'num_samples': 1, 'log_prompt': False, 'backend': 'triton', 'precision': 'fp32', 'prompt_option': 'one_shot', 'include_hardware_info': False, 'hardware_gpu_name': 'None', 'custom_prompt_key': 'None', 'check_kernel': False})
+Generating 1 sample(s) each for level 2 problems: [40]
+
+⚠️  WARNING: Run directory already exists: /sgl-workspace/KernelBench/runs/mi300_k2_5_level2
+   Existing kernels will be skipped. Use a different run_name for a fresh run.
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:37<00:00, 37.05s/it]100%|██████████| 1/1 [00:37<00:00, 37.05s/it]
+
+Generated 1 samples for total 1 problems, Please retry for the 0 failed problems.

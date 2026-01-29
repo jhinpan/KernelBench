@@ -463,7 +463,11 @@ def eval_kernel_against_ref(
             raise ValueError(
                 f"device must be an int or torch.device, got {type(device)}"
             )
+        # CUDA on NVIDIA uses CUDA_VISIBLE_DEVICES; ROCm uses HIP/ROCR.
         os.environ["CUDA_VISIBLE_DEVICES"] = str(device_num)
+        if torch.version.hip is not None:
+            os.environ["HIP_VISIBLE_DEVICES"] = str(device_num)
+            os.environ["ROCR_VISIBLE_DEVICES"] = str(device_num)
     context = {}
 
     if verbose:

@@ -80,6 +80,27 @@ image = (
     .add_local_dir(KERNELBENCH_DIR, remote_path="/root/KernelBench")  # must be last
 )
 
+def _should_skip_rocm_triton_kernel(kernel_src: str, backend: str) -> tuple[bool, str]:
+    """
+    Best-effort guard to avoid ROCm GPU hangs from known-unsafe Triton patterns.
+    Returns (should_skip, reason).
+    """
+    if backend.lower() != "triton":
+        return False, ""
+    # Only apply on ROCm
+    try:
+        import torch
+        if torch.version.hip is None:
+            return False, ""
+    except Exception:
+        return False, ""
+
+    code = kernel_src.lower()
+    # Triton pool3d kernels with nested Python loops have triggered GPU hangs on MI300X.
+    if "pool3d" in code:
+        return True, "skip_rocm_triton_pool3d_hang_risk"
+    return False, ""
+
 
 class EvalConfig(Config):
     def __init__(self):
@@ -306,6 +327,12 @@ def evaluate_single_sample(
     assert (
         kernel_src is not None
     ), f"Kernel not found for problem {problem_id} sample {sample_id}"
+
+    # ROCm safety precheck for Triton kernels
+    should_skip, skip_reason = _should_skip_rocm_triton_kernel(kernel_src, configs.backend)
+    if should_skip:
+        metadata = {"skipped": True, "skip_reason": skip_reason}
+        return KernelExecResult(compiled=False, correctness=False, metadata=metadata)
 
     build_dir = os.path.join(
         configs.kernel_eval_build_dir, configs.run_name, f"{problem_id}", f"{sample_id}"
@@ -811,7 +838,14 @@ def main(config: EvalConfig):
 
     all_problem_ids = dataset.get_problem_ids()
 
-    if config.subset == (None, None):
+    if config.problem_ids is not None:
+        # Allow explicit selection of problem IDs when provided.
+        requested = [int(pid) for pid in config.problem_ids]
+        problem_ids_to_run = [pid for pid in requested if pid in all_problem_ids]
+        missing = sorted(set(requested) - set(problem_ids_to_run))
+        if missing:
+            print(f"Warning: Requested problem_ids not found in dataset: {missing}")
+    elif config.subset == (None, None):
         problem_ids_to_run = all_problem_ids
     else:
         start, end = config.subset

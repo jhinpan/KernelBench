@@ -153,13 +153,13 @@ def generate_sample_single(
             # uses the default set of forbidden and warning patterns, 
             # you could adapt the patterns to your own setting (degree of banning cuda stream, allowing some torch ops)
         )
-        assert static_check_status, f"Static check failed for sample {work.sample_id} for problem {problem_number}: {problem_name}. Error: {error}. Warnings: {warnings}"
+        assert static_check_status, f"Static check failed for sample {work.sample_id} for problem {work.problem_id}: {problem_name}. Error: {error}. Warnings: {warnings}"
         if warnings:
-            print(f"Static check warnings for sample {work.sample_id} for problem {problem_number}: {problem_name}. Warnings: {warnings}")
+            print(f"Static check warnings for sample {work.sample_id} for problem {work.problem_id}: {problem_name}. Warnings: {warnings}")
 
     if config.verbose:
         print(
-            f"Generated sample {work.sample_id} for problem {problem_number}: {problem_name}"
+            f"Generated sample {work.sample_id} for problem {work.problem_id}: {problem_name}"
         )
 
     # Store to local file
@@ -219,6 +219,10 @@ def main(config: GenerationConfig):
     # Convert string boolean to actual boolean for reasoning model flag
     if isinstance(config.is_reasoning_model, str):
         config.is_reasoning_model = config.is_reasoning_model.lower() in ['true', '1', 'yes']
+
+    # Convert string boolean to actual boolean for static checker
+    if isinstance(config.check_kernel, str):
+        config.check_kernel = config.check_kernel.lower() in ['true', '1', 'yes']
     
     custom_prompt_key = getattr(config, "custom_prompt_key", None)
     if isinstance(custom_prompt_key, str):

@@ -1,0 +1,84 @@
+[retry level3 pid=7]
+Starting Batch Generation with config: EvalConfig({'dataset_src': 'huggingface', 'dataset_name': 'ScalingIntelligence/KernelBench', 'level': 3, 'subset': [7, 7], 'run_name': 'mi300_k2_5_level3', 'num_workers': 1, 'api_query_interval': 0.0, 'server_type': 'mi300_k2_5', 'model_name': '/data/Kimi-K2.5', 'max_tokens': 8192, 'temperature': 0.2, 'is_reasoning_model': False, 'reasoning_effort': 'low', 'budget_tokens': 0, 'runs_dir': '/sgl-workspace/KernelBench/runs', 'verbose': False, 'store_type': 'local', 'num_samples': 1, 'log_prompt': False, 'backend': 'triton', 'precision': 'fp32', 'prompt_option': 'one_shot', 'include_hardware_info': False, 'hardware_gpu_name': 'None', 'custom_prompt_key': 'None', 'check_kernel': True})
+Generating 1 sample(s) each for level 3 problems: [7]
+
+⚠️  WARNING: Run directory already exists: /sgl-workspace/KernelBench/runs/mi300_k2_5_level3
+   Existing kernels will be skipped. Use a different run_name for a fresh run.
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [02:11<00:00, 131.99s/it]100%|██████████| 1/1 [02:11<00:00, 131.99s/it]
+Static check warnings for sample 0 for problem 7: 7_GoogleNetInceptionV1. Warnings: ['Uses torch.nn compute layer (only containers, Parameter, init allowed)']
+
+Generated 1 samples for total 1 problems, Please retry for the 0 failed problems.
+---
+[retry level3 pid=21]
+Starting Batch Generation with config: EvalConfig({'dataset_src': 'huggingface', 'dataset_name': 'ScalingIntelligence/KernelBench', 'level': 3, 'subset': [21, 21], 'run_name': 'mi300_k2_5_level3', 'num_workers': 1, 'api_query_interval': 0.0, 'server_type': 'mi300_k2_5', 'model_name': '/data/Kimi-K2.5', 'max_tokens': 8192, 'temperature': 0.2, 'is_reasoning_model': False, 'reasoning_effort': 'low', 'budget_tokens': 0, 'runs_dir': '/sgl-workspace/KernelBench/runs', 'verbose': False, 'store_type': 'local', 'num_samples': 1, 'log_prompt': False, 'backend': 'triton', 'precision': 'fp32', 'prompt_option': 'one_shot', 'include_hardware_info': False, 'hardware_gpu_name': 'None', 'custom_prompt_key': 'None', 'check_kernel': True})
+Generating 1 sample(s) each for level 3 problems: [21]
+
+⚠️  WARNING: Run directory already exists: /sgl-workspace/KernelBench/runs/mi300_k2_5_level3
+   Existing kernels will be skipped. Use a different run_name for a fresh run.
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [01:35<00:00, 95.13s/it]100%|██████████| 1/1 [01:35<00:00, 95.13s/it]
+Error generating sample 21 0: Static check failed for sample 0 for problem 21: 21_EfficientNetMBConv. Error: ["Contains 'pass' statement (inheritance bypass)"]. Warnings: ['Uses torch.nn compute layer (only containers, Parameter, init allowed)']
+
+Generated 0 samples for total 1 problems, Please retry for the 1 failed problems.
+---
+[retry level3 pid=29]
+Starting Batch Generation with config: EvalConfig({'dataset_src': 'huggingface', 'dataset_name': 'ScalingIntelligence/KernelBench', 'level': 3, 'subset': [29, 29], 'run_name': 'mi300_k2_5_level3', 'num_workers': 1, 'api_query_interval': 0.0, 'server_type': 'mi300_k2_5', 'model_name': '/data/Kimi-K2.5', 'max_tokens': 8192, 'temperature': 0.2, 'is_reasoning_model': False, 'reasoning_effort': 'low', 'budget_tokens': 0, 'runs_dir': '/sgl-workspace/KernelBench/runs', 'verbose': False, 'store_type': 'local', 'num_samples': 1, 'log_prompt': False, 'backend': 'triton', 'precision': 'fp32', 'prompt_option': 'one_shot', 'include_hardware_info': False, 'hardware_gpu_name': 'None', 'custom_prompt_key': 'None', 'check_kernel': True})
+Generating 1 sample(s) each for level 3 problems: [29]
+
+⚠️  WARNING: Run directory already exists: /sgl-workspace/KernelBench/runs/mi300_k2_5_level3
+   Existing kernels will be skipped. Use a different run_name for a fresh run.
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [03:46<00:00, 226.72s/it]100%|██████████| 1/1 [03:46<00:00, 226.72s/it]
+Static check warnings for sample 0 for problem 29: 29_SwinMLP. Warnings: ['Uses torch.nn compute layer (only containers, Parameter, init allowed)', 'Uses torch.nn.functional op: F.layer_norm']
+
+Generated 1 samples for total 1 problems, Please retry for the 0 failed problems.
+---
+[retry level3 pid=32]
+Starting Batch Generation with config: EvalConfig({'dataset_src': 'huggingface', 'dataset_name': 'ScalingIntelligence/KernelBench', 'level': 3, 'subset': [32, 32], 'run_name': 'mi300_k2_5_level3', 'num_workers': 1, 'api_query_interval': 0.0, 'server_type': 'mi300_k2_5', 'model_name': '/data/Kimi-K2.5', 'max_tokens': 8192, 'temperature': 0.2, 'is_reasoning_model': False, 'reasoning_effort': 'low', 'budget_tokens': 0, 'runs_dir': '/sgl-workspace/KernelBench/runs', 'verbose': False, 'store_type': 'local', 'num_samples': 1, 'log_prompt': False, 'backend': 'triton', 'precision': 'fp32', 'prompt_option': 'one_shot', 'include_hardware_info': False, 'hardware_gpu_name': 'None', 'custom_prompt_key': 'None', 'check_kernel': True})
+Generating 1 sample(s) each for level 3 problems: [32]
+
+⚠️  WARNING: Run directory already exists: /sgl-workspace/KernelBench/runs/mi300_k2_5_level3
+   Existing kernels will be skipped. Use a different run_name for a fresh run.
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [02:17<00:00, 137.44s/it]100%|██████████| 1/1 [02:17<00:00, 137.44s/it]
+Error generating sample 32 0: Static check failed for sample 0 for problem 32: 32_ConvolutionalVisionTransformer. Error: ["Contains 'pass' statement (inheritance bypass)"]. Warnings: ['Uses torch computation op: torch.matmul', 'Uses torch.nn compute layer (only containers, Parameter, init allowed)']
+
+Generated 0 samples for total 1 problems, Please retry for the 1 failed problems.
+---
+[retry level3 pid=40]
+Starting Batch Generation with config: EvalConfig({'dataset_src': 'huggingface', 'dataset_name': 'ScalingIntelligence/KernelBench', 'level': 3, 'subset': [40, 40], 'run_name': 'mi300_k2_5_level3', 'num_workers': 1, 'api_query_interval': 0.0, 'server_type': 'mi300_k2_5', 'model_name': '/data/Kimi-K2.5', 'max_tokens': 8192, 'temperature': 0.2, 'is_reasoning_model': False, 'reasoning_effort': 'low', 'budget_tokens': 0, 'runs_dir': '/sgl-workspace/KernelBench/runs', 'verbose': False, 'store_type': 'local', 'num_samples': 1, 'log_prompt': False, 'backend': 'triton', 'precision': 'fp32', 'prompt_option': 'one_shot', 'include_hardware_info': False, 'hardware_gpu_name': 'None', 'custom_prompt_key': 'None', 'check_kernel': True})
+Generating 1 sample(s) each for level 3 problems: [40]
+
+⚠️  WARNING: Run directory already exists: /sgl-workspace/KernelBench/runs/mi300_k2_5_level3
+   Existing kernels will be skipped. Use a different run_name for a fresh run.
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [02:44<00:00, 164.40s/it]100%|██████████| 1/1 [02:44<00:00, 164.40s/it]
+Static check warnings for sample 0 for problem 40: 40_GRUHidden. Warnings: ['Uses torch.nn compute layer (only containers, Parameter, init allowed)']
+
+Generated 1 samples for total 1 problems, Please retry for the 0 failed problems.
+---
+[retry level3 pid=48]
+Starting Batch Generation with config: EvalConfig({'dataset_src': 'huggingface', 'dataset_name': 'ScalingIntelligence/KernelBench', 'level': 3, 'subset': [48, 48], 'run_name': 'mi300_k2_5_level3', 'num_workers': 1, 'api_query_interval': 0.0, 'server_type': 'mi300_k2_5', 'model_name': '/data/Kimi-K2.5', 'max_tokens': 8192, 'temperature': 0.2, 'is_reasoning_model': False, 'reasoning_effort': 'low', 'budget_tokens': 0, 'runs_dir': '/sgl-workspace/KernelBench/runs', 'verbose': False, 'store_type': 'local', 'num_samples': 1, 'log_prompt': False, 'backend': 'triton', 'precision': 'fp32', 'prompt_option': 'one_shot', 'include_hardware_info': False, 'hardware_gpu_name': 'None', 'custom_prompt_key': 'None', 'check_kernel': True})
+Generating 1 sample(s) each for level 3 problems: [48]
+
+⚠️  WARNING: Run directory already exists: /sgl-workspace/KernelBench/runs/mi300_k2_5_level3
+   Existing kernels will be skipped. Use a different run_name for a fresh run.
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [01:21<00:00, 81.28s/it]100%|██████████| 1/1 [01:21<00:00, 81.28s/it]
+Static check warnings for sample 0 for problem 48: 48_Mamba2ReturnY. Warnings: ['Uses torch computation op: torch.einsum', 'Uses torch.nn compute layer (only containers, Parameter, init allowed)']
+
+Generated 1 samples for total 1 problems, Please retry for the 0 failed problems.
+---
+[retry level3 pid=49]
+Starting Batch Generation with config: EvalConfig({'dataset_src': 'huggingface', 'dataset_name': 'ScalingIntelligence/KernelBench', 'level': 3, 'subset': [49, 49], 'run_name': 'mi300_k2_5_level3', 'num_workers': 1, 'api_query_interval': 0.0, 'server_type': 'mi300_k2_5', 'model_name': '/data/Kimi-K2.5', 'max_tokens': 8192, 'temperature': 0.2, 'is_reasoning_model': False, 'reasoning_effort': 'low', 'budget_tokens': 0, 'runs_dir': '/sgl-workspace/KernelBench/runs', 'verbose': False, 'store_type': 'local', 'num_samples': 1, 'log_prompt': False, 'backend': 'triton', 'precision': 'fp32', 'prompt_option': 'one_shot', 'include_hardware_info': False, 'hardware_gpu_name': 'None', 'custom_prompt_key': 'None', 'check_kernel': True})
+Generating 1 sample(s) each for level 3 problems: [49]
+
+⚠️  WARNING: Run directory already exists: /sgl-workspace/KernelBench/runs/mi300_k2_5_level3
+   Existing kernels will be skipped. Use a different run_name for a fresh run.
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [01:00<00:00, 60.62s/it]100%|██████████| 1/1 [01:00<00:00, 60.62s/it]
+Static check warnings for sample 0 for problem 49: 49_Mamba2ReturnFinalState. Warnings: ['Uses torch.nn compute layer (only containers, Parameter, init allowed)']
+
+Generated 1 samples for total 1 problems, Please retry for the 0 failed problems.
+---

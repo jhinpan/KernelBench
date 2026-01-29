@@ -40,14 +40,38 @@ SGLANG_KEY = os.environ.get("SGLANG_API_KEY")
 
 def set_gpu_arch(arch_list: list[str]):
     """
-    Set env variable for torch cuda arch list to build kernels for specified architectures
+    Set env variable for torch GPU arch list to build kernels for specified architectures.
+
+    - CUDA: uses TORCH_CUDA_ARCH_LIST with friendly names (e.g., Ampere, Hopper).
+    - ROCm: uses TORCH_HIP_ARCH_LIST with gfx targets (e.g., gfx942).
     """
+    if isinstance(arch_list, str):
+        arch_list = [arch_list]
+
+    if not arch_list:
+        return
+
+    # Split ROCm gfx targets vs CUDA arch names.
+    gfx_arches = [arch for arch in arch_list if str(arch).lower().startswith("gfx")]
+    cuda_arches = [arch for arch in arch_list if arch not in gfx_arches]
+
+    if gfx_arches and cuda_arches:
+        raise ValueError(
+            f"Cannot mix ROCm gfx targets and CUDA arch names in one list: {arch_list}"
+        )
+
+    if gfx_arches:
+        # ROCm / HIP compilation target list
+        os.environ["TORCH_HIP_ARCH_LIST"] = ";".join(gfx_arches)
+        return
+
+    # CUDA arch list validation
     valid_archs = ["Maxwell", "Pascal", "Volta", "Turing", "Ampere", "Hopper", "Ada"]
-    for arch in arch_list:
+    for arch in cuda_arches:
         if arch not in valid_archs:
             raise ValueError(f"Invalid architecture: {arch}. Must be one of {valid_archs}")
-    
-    os.environ["TORCH_CUDA_ARCH_LIST"] = ";".join(arch_list)
+
+    os.environ["TORCH_CUDA_ARCH_LIST"] = ";".join(cuda_arches)
 
 def query_server(
     prompt: str | list[dict],  # string if normal prompt, list of dicts if chat prompt,
@@ -73,14 +97,17 @@ def query_server(
     - Local Server (SGLang, vLLM, Tokasaurus)
     """
     # Local Server (SGLang, vLLM, Tokasaurus) - special handling
-    if server_type == "local":
+    local_server_types = {"local", "mi300_k2_5", "sglang_local"}
+    if server_type in local_server_types:
         url = f"http://{server_address}:{server_port}"
+        api_key = SGLANG_KEY or "EMPTY"
         client = OpenAI(
-            api_key=SGLANG_KEY, base_url=f"{url}/v1", timeout=None, max_retries=0
+            api_key=api_key, base_url=f"{url}/v1", timeout=None, max_retries=0
         )
+        model = model_name if model_name not in [None, "None"] else "default"
         if isinstance(prompt, str):
             response = client.completions.create(
-                model="default",
+                model=model,
                 prompt=prompt,
                 temperature=temperature,
                 n=num_completions,
@@ -90,7 +117,7 @@ def query_server(
             outputs = [choice.text for choice in response.choices]
         else:
             response = client.chat.completions.create(
-                model="default",
+                model=model,
                 messages=prompt,
                 temperature=temperature,
                 n=num_completions,
@@ -191,6 +218,14 @@ SERVER_PRESETS = {
         "temperature": 0.8, # human eval pass@N temperature
         "server_port": 10210,
         "server_address": "matx2.stanford.edu",
+        "max_tokens": 8192,
+    },
+    # MI300X local ROCm node + Kimi K2.5 served by SGLang on port 30000
+    "mi300_k2_5": {
+        "temperature": 0.0,
+        "server_port": 30000,
+        "server_address": "127.0.0.1",
+        "model_name": "/data/Kimi-K2.5",
         "max_tokens": 8192,
     },
     "anthropic": {  # for Claude 3.7 Sonnet

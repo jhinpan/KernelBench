@@ -1,0 +1,36 @@
+[retry level4 pid=1]
+Starting Batch Generation with config: EvalConfig({'dataset_src': 'local', 'dataset_name': 'ScalingIntelligence/KernelBench', 'level': 4, 'subset': [1, 1], 'run_name': 'mi300_k2_5_level4', 'num_workers': 1, 'api_query_interval': 0.0, 'server_type': 'mi300_k2_5', 'model_name': '/data/Kimi-K2.5', 'max_tokens': 8192, 'temperature': 0.2, 'is_reasoning_model': False, 'reasoning_effort': 'low', 'budget_tokens': 0, 'runs_dir': '/sgl-workspace/KernelBench/runs', 'verbose': False, 'store_type': 'local', 'num_samples': 1, 'log_prompt': False, 'backend': 'triton', 'precision': 'fp32', 'prompt_option': 'one_shot', 'include_hardware_info': False, 'hardware_gpu_name': 'None', 'custom_prompt_key': 'None', 'check_kernel': True})
+Generating 1 sample(s) each for level 4 problems: [1]
+
+⚠️  WARNING: Run directory already exists: /sgl-workspace/KernelBench/runs/mi300_k2_5_level4
+   Existing kernels will be skipped. Use a different run_name for a fresh run.
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [01:19<00:00, 79.11s/it]100%|██████████| 1/1 [01:19<00:00, 79.11s/it]
+Static check warnings for sample 0 for problem 1: 1_EleutherAI-gpt-neo-2p7B_bs32_seq256.py. Warnings: ['Uses torch.nn.functional op: F.linear', 'Uses torch.nn compute layer (only containers, Parameter, init allowed)']
+
+Generated 1 samples for total 1 problems, Please retry for the 0 failed problems.
+---
+[retry level4 pid=18]
+Starting Batch Generation with config: EvalConfig({'dataset_src': 'local', 'dataset_name': 'ScalingIntelligence/KernelBench', 'level': 4, 'subset': [18, 18], 'run_name': 'mi300_k2_5_level4', 'num_workers': 1, 'api_query_interval': 0.0, 'server_type': 'mi300_k2_5', 'model_name': '/data/Kimi-K2.5', 'max_tokens': 8192, 'temperature': 0.2, 'is_reasoning_model': False, 'reasoning_effort': 'low', 'budget_tokens': 0, 'runs_dir': '/sgl-workspace/KernelBench/runs', 'verbose': False, 'store_type': 'local', 'num_samples': 1, 'log_prompt': False, 'backend': 'triton', 'precision': 'fp32', 'prompt_option': 'one_shot', 'include_hardware_info': False, 'hardware_gpu_name': 'None', 'custom_prompt_key': 'None', 'check_kernel': True})
+Generating 1 sample(s) each for level 4 problems: [18]
+
+⚠️  WARNING: Run directory already exists: /sgl-workspace/KernelBench/runs/mi300_k2_5_level4
+   Existing kernels will be skipped. Use a different run_name for a fresh run.
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [01:20<00:00, 80.87s/it]100%|██████████| 1/1 [01:20<00:00, 80.87s/it]
+Static check warnings for sample 0 for problem 18: 18_EleutherAI-gpt-neo-2p7B_bs512_seq32.py. Warnings: ['Uses torch computation op: torch.matmul', 'Uses torch.nn compute layer (only containers, Parameter, init allowed)']
+
+Generated 1 samples for total 1 problems, Please retry for the 0 failed problems.
+---
+[retry level4 pid=20]
+Starting Batch Generation with config: EvalConfig({'dataset_src': 'local', 'dataset_name': 'ScalingIntelligence/KernelBench', 'level': 4, 'subset': [20, 20], 'run_name': 'mi300_k2_5_level4', 'num_workers': 1, 'api_query_interval': 0.0, 'server_type': 'mi300_k2_5', 'model_name': '/data/Kimi-K2.5', 'max_tokens': 8192, 'temperature': 0.2, 'is_reasoning_model': False, 'reasoning_effort': 'low', 'budget_tokens': 0, 'runs_dir': '/sgl-workspace/KernelBench/runs', 'verbose': False, 'store_type': 'local', 'num_samples': 1, 'log_prompt': False, 'backend': 'triton', 'precision': 'fp32', 'prompt_option': 'one_shot', 'include_hardware_info': False, 'hardware_gpu_name': 'None', 'custom_prompt_key': 'None', 'check_kernel': True})
+Generating 1 sample(s) each for level 4 problems: [20]
+
+⚠️  WARNING: Run directory already exists: /sgl-workspace/KernelBench/runs/mi300_k2_5_level4
+   Existing kernels will be skipped. Use a different run_name for a fresh run.
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [01:27<00:00, 87.79s/it]100%|██████████| 1/1 [01:27<00:00, 87.79s/it]
+Error generating sample 20 0: Static check failed for sample 0 for problem 20: 20_facebook-bart-large_bs32_seq256.py. Error: ["Contains 'pass' statement (inheritance bypass)"]. Warnings: ['Uses torch computation op: torch.matmul', 'Uses torch.nn compute layer (only containers, Parameter, init allowed)']
+
+Generated 0 samples for total 1 problems, Please retry for the 1 failed problems.
+---
