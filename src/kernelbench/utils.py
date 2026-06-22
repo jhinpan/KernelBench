@@ -97,7 +97,11 @@ def query_server(
     - Local Server (SGLang, vLLM, Tokasaurus)
     """
     # Local Server (SGLang, vLLM, Tokasaurus) - special handling
-    local_server_types = {"local", "mi300_k2_5", "sglang_local"}
+    local_server_types = {"local", "mi300_k2_5", "sglang_local", "glm_5_2"}
+    # Chat/thinking models (e.g. GLM-5.2): route string prompts through
+    # /v1/chat/completions so SGLang applies the model's chat template + reasoning,
+    # instead of raw /v1/completions text continuation which bypasses both.
+    chat_local_types = {"glm_5_2"}
     if server_type in local_server_types:
         url = f"http://{server_address}:{server_port}"
         api_key = SGLANG_KEY or "EMPTY"
@@ -105,6 +109,8 @@ def query_server(
             api_key=api_key, base_url=f"{url}/v1", timeout=None, max_retries=0
         )
         model = model_name if model_name not in [None, "None"] else "default"
+        if isinstance(prompt, str) and server_type in chat_local_types:
+            prompt = [{"role": "user", "content": prompt}]
         if isinstance(prompt, str):
             response = client.completions.create(
                 model=model,
@@ -125,7 +131,15 @@ def query_server(
                 top_p=top_p,
             )
             outputs = [choice.message.content for choice in response.choices]
-        
+            # Thinking models (e.g. GLM-5.2) emit reasoning inline as
+            # "<think>...</think><answer>". Keep only the final answer so that
+            # downstream code extraction doesn't grab a partial snippet from the
+            # reasoning trace (which would lack the ModelNew class).
+            if server_type in chat_local_types:
+                outputs = [
+                    (o or "").split("</think>")[-1] for o in outputs
+                ]
+
         # output processing
         if len(outputs) == 1:
             return outputs[0]
@@ -227,6 +241,16 @@ SERVER_PRESETS = {
         "server_address": "127.0.0.1",
         "model_name": "/data/Kimi-K2.5",
         "max_tokens": 8192,
+    },
+    # MI300X local ROCm node + GLM-5.2-FP8 served by SGLang on port 30000.
+    # Routed via /v1/chat/completions (see chat_local_types) so GLM-5.2's
+    # chat template + thinking are applied. max_tokens leaves room for reasoning + code.
+    "glm_5_2": {
+        "temperature": 0.0,
+        "server_port": 30000,
+        "server_address": "127.0.0.1",
+        "model_name": "default",
+        "max_tokens": 16384,
     },
     "anthropic": {  # for Claude 3.7 Sonnet
         "model_name": "anthropic/claude-3-7-sonnet-20250219",
