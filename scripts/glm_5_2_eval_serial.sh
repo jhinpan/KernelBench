@@ -23,7 +23,7 @@ LOG_DIR="logs/glm_5_2"
 mkdir -p "${LOG_DIR}"
 EVAL_LOG="${LOG_DIR}/eval_level${LEVEL}_serial.log"
 
-PYTHON_RUNNER="${PYTHON_RUNNER:-./.venv/bin/python}"
+PYTHON_RUNNER="${PYTHON_RUNNER:-python}"
 
 for pid in $(seq "${START_ID}" "${END_ID}"); do
   # Skip if already evaluated

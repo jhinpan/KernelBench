@@ -3,12 +3,11 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-PYTHON_RUNNER="python"
-if [[ -x "${ROOT_DIR}/.venv/bin/python" ]]; then
-  PYTHON_RUNNER="${ROOT_DIR}/.venv/bin/python"
-elif command -v uv >/dev/null 2>&1; then
-  PYTHON_RUNNER="uv run python"
-fi
+# Default to the system python (which on the ROCm node has torch+ROCm and the
+# editable kernelbench install). Override with PYTHON_RUNNER=... if needed.
+# NOTE: do NOT auto-pick "uv run python" here -- on this node uv uses a separate
+# env without ROCm torch / kernelbench.
+PYTHON_RUNNER="${PYTHON_RUNNER:-python}"
 
 ${PYTHON_RUNNER} - <<'PY' || { echo "Missing deps: install pydra-config (or use uv sync)"; exit 1; }
 import pydra  # noqa: F401
