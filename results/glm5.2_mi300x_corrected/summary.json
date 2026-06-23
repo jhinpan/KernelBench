@@ -1,0 +1,39 @@
+{
+  "note": "corrected (extraction-fix) run; one-shot greedy temp0 Triton on 8xMI300X gfx942",
+  "levels": {
+    "1": {
+      "problems": 100,
+      "generated": 88,
+      "compiled": 84,
+      "correct": 51,
+      "fast_1": 0
+    },
+    "2": {
+      "problems": 100,
+      "generated": 87,
+      "compiled": 78,
+      "correct": 35,
+      "fast_1": 0
+    },
+    "3": {
+      "problems": 50,
+      "generated": 16,
+      "compiled": 16,
+      "correct": 6,
+      "fast_1": 0
+    }
+  },
+  "total": {
+    "problems": 250,
+    "generated": 191,
+    "compiled": 178,
+    "correct": 92,
+    "fast_1": 0,
+    "correct_pct": 36.8
+  },
+  "round1_buggy_total": {
+    "compiled": 76,
+    "correct": 50,
+    "correct_pct": 20.0
+  }
+}

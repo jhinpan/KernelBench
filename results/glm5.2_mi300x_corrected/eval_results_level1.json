@@ -1,0 +1,2149 @@
+{
+    "1": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "runtime_error": "out of resource: shared memory, Required: 131072, Hardware limit: 65536. Reducing block sizes or `num_stages` may help.",
+                "runtime_error_name": "triton.runtime.errors.OutOfResources",
+                "runtime_error_traceback": "Traceback (most recent call last):\n  File \"/sgl-workspace/workspace/KernelBench/src/kernelbench/eval.py\", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/tmp/tmpazm3i5hr.py\", line 89, in forward\n    return triton_matmul(A, B)\n  File \"/tmp/tmpazm3i5hr.py\", line 68, in triton_matmul\n    matmul_kernel[grid](\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 370, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 760, in run\n    launch_metadata = kernel.launch_metadata(grid, stream, *bound_args.values())\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 485, in launch_metadata\n    self._init_handles()\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 459, in _init_handles\n    raise_(OutOfResources(self.metadata.shared, max_shared, \"shared memory\"))\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 451, in raise_\n    raise err\ntriton.runtime.errors.OutOfResources: out of resource: shared memory, Required: 131072, Hardware limit: 65536. Reducing block sizes or `num_stages` may help.\n"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "2": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "1.410889",
+                    "1.412354",
+                    "1.407959",
+                    "1.412109",
+                    "1.409668"
+                ],
+                "avg_difference": [
+                    "1.333187",
+                    "1.333632",
+                    "1.332653",
+                    "1.333181",
+                    "1.332943"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "3": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "0.197113",
+                    "0.197296",
+                    "0.196289",
+                    "0.196411",
+                    "0.196503"
+                ],
+                "avg_difference": [
+                    "0.166611",
+                    "0.166637",
+                    "0.166601",
+                    "0.166627",
+                    "0.166606"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "4": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 3.68,
+            "runtime_stats": {
+                "mean": 3.68,
+                "std": 0.0512,
+                "min": 3.63,
+                "max": 3.89,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "5": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 2.54,
+            "runtime_stats": {
+                "mean": 2.54,
+                "std": 0.13,
+                "min": 2.42,
+                "max": 2.84,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "6": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "85.906250",
+                    "85.921875",
+                    "85.968750",
+                    "86.031250",
+                    "85.937500"
+                ],
+                "avg_difference": [
+                    "85.351006",
+                    "85.366592",
+                    "85.361504",
+                    "85.365738",
+                    "85.358322"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "7": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "runtime_error": "out of resource: shared memory, Required: 131072, Hardware limit: 65536. Reducing block sizes or `num_stages` may help.",
+                "runtime_error_name": "triton.runtime.errors.OutOfResources",
+                "runtime_error_traceback": "Traceback (most recent call last):\n  File \"/sgl-workspace/workspace/KernelBench/src/kernelbench/eval.py\", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/tmp/tmpqsmjddpt.py\", line 89, in forward\n    return triton_matmul(A, B)\n  File \"/tmp/tmpqsmjddpt.py\", line 67, in triton_matmul\n    matmul_kernel[grid](\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 370, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 760, in run\n    launch_metadata = kernel.launch_metadata(grid, stream, *bound_args.values())\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 485, in launch_metadata\n    self._init_handles()\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 459, in _init_handles\n    raise_(OutOfResources(self.metadata.shared, max_shared, \"shared memory\"))\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 451, in raise_\n    raise err\ntriton.runtime.errors.OutOfResources: out of resource: shared memory, Required: 131072, Hardware limit: 65536. Reducing block sizes or `num_stages` may help.\n"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "8": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "0.531799",
+                    "0.534180",
+                    "0.525269",
+                    "0.529968",
+                    "0.523865"
+                ],
+                "avg_difference": [
+                    "0.479894",
+                    "0.479965",
+                    "0.479651",
+                    "0.479922",
+                    "0.479789"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "9": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "0.011737",
+                    "0.011279",
+                    "0.011305",
+                    "0.011332",
+                    "0.011760"
+                ],
+                "avg_difference": [
+                    "0.005214",
+                    "0.005206",
+                    "0.005207",
+                    "0.005207",
+                    "0.005204"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "10": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "0.371460",
+                    "0.370300",
+                    "0.371826",
+                    "0.370422",
+                    "0.368652"
+                ],
+                "avg_difference": [
+                    "0.333358",
+                    "0.333350",
+                    "0.332949",
+                    "0.333112",
+                    "0.333226"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "11": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "0.057846",
+                    "0.057098",
+                    "0.057373",
+                    "0.056915",
+                    "0.057961"
+                ],
+                "avg_difference": [
+                    "0.041755",
+                    "0.041679",
+                    "0.041624",
+                    "0.041712",
+                    "0.041664"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "12": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)",
+                "excessive_speedup": true
+            },
+            "runtime": 0.0554,
+            "runtime_stats": {
+                "mean": 0.0554,
+                "std": 0.00393,
+                "min": 0.0526,
+                "max": 0.0757,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "13": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "0.759033",
+                    "0.759033",
+                    "0.753784",
+                    "0.759033",
+                    "0.762207"
+                ],
+                "avg_difference": [
+                    "0.713907",
+                    "0.714208",
+                    "0.713810",
+                    "0.713811",
+                    "0.713704"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "14": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "runtime_error": "out of resource: shared memory, Required: 131072, Hardware limit: 65536. Reducing block sizes or `num_stages` may help.",
+                "runtime_error_name": "triton.runtime.errors.OutOfResources",
+                "runtime_error_traceback": "Traceback (most recent call last):\n  File \"/sgl-workspace/workspace/KernelBench/src/kernelbench/eval.py\", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/tmp/tmphj9zob2b.py\", line 90, in forward\n    return triu_matmul(A, B)\n  File \"/tmp/tmphj9zob2b.py\", line 70, in triu_matmul\n    triu_matmul_kernel[grid](\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 370, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 760, in run\n    launch_metadata = kernel.launch_metadata(grid, stream, *bound_args.values())\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 485, in launch_metadata\n    self._init_handles()\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 459, in _init_handles\n    raise_(OutOfResources(self.metadata.shared, max_shared, \"shared memory\"))\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 451, in raise_\n    raise err\ntriton.runtime.errors.OutOfResources: out of resource: shared memory, Required: 131072, Hardware limit: 65536. Reducing block sizes or `num_stages` may help.\n"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "15": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "0.699097",
+                    "0.697266",
+                    "0.695068",
+                    "0.693115",
+                    "0.693604"
+                ],
+                "avg_difference": [
+                    "0.111194",
+                    "0.111177",
+                    "0.111155",
+                    "0.111153",
+                    "0.111154"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "16": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "runtime_error": "out of resource: shared memory, Required: 98304, Hardware limit: 65536. Reducing block sizes or `num_stages` may help.",
+                "runtime_error_name": "triton.runtime.errors.OutOfResources",
+                "runtime_error_traceback": "Traceback (most recent call last):\n  File \"/sgl-workspace/workspace/KernelBench/src/kernelbench/eval.py\", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/tmp/tmp3w5bex06.py\", line 88, in forward\n    return triton_matmul_at_b(A, B)\n  File \"/tmp/tmp3w5bex06.py\", line 73, in triton_matmul_at_b\n    matmul_kernel[grid](\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 370, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/autotuner.py\", line 252, in run\n    ret = self.fn.run(\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 760, in run\n    launch_metadata = kernel.launch_metadata(grid, stream, *bound_args.values())\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 485, in launch_metadata\n    self._init_handles()\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 459, in _init_handles\n    raise_(OutOfResources(self.metadata.shared, max_shared, \"shared memory\"))\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 451, in raise_\n    raise err\ntriton.runtime.errors.OutOfResources: out of resource: shared memory, Required: 98304, Hardware limit: 65536. Reducing block sizes or `num_stages` may help.\n"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "17": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "1.411621",
+                    "1.411133",
+                    "1.407471",
+                    "1.408203",
+                    "1.406982"
+                ],
+                "avg_difference": [
+                    "1.333185",
+                    "1.333635",
+                    "1.332656",
+                    "1.333179",
+                    "1.332946"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "18": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "1.413818",
+                    "1.408447",
+                    "1.408936",
+                    "1.403564",
+                    "1.404297"
+                ],
+                "avg_difference": [
+                    "1.333183",
+                    "1.333637",
+                    "1.332655",
+                    "1.333184",
+                    "1.332946"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "19": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 3.55,
+            "runtime_stats": {
+                "mean": 3.55,
+                "std": 0.167,
+                "min": 3.25,
+                "max": 3.83,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "20": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 3.52,
+            "runtime_stats": {
+                "mean": 3.52,
+                "std": 0.197,
+                "min": 3.22,
+                "max": 3.83,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "21": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 3.74,
+            "runtime_stats": {
+                "mean": 3.74,
+                "std": 0.0651,
+                "min": 3.69,
+                "max": 4.08,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "22": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "runtime_error": "at 12:10:\ndef tanh_kernel(\n    x_ptr,\n    out_ptr,\n    n_elements,\n    BLOCK_SIZE: tl.constexpr,\n):\n    pid = tl.program_id(0)\n    block_start = pid * BLOCK_SIZE\n    offsets = block_start + tl.aran...",
+                "runtime_error_name": "triton.compiler.errors.CompilationError",
+                "runtime_error_traceback": "Traceback (most recent call last):\n  File \"/sgl-workspace/workspace/KernelBench/src/kernelbench/eval.py\", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/tmp/tmp8divsfy0.py\", line 50, in forward\n    return triton_tanh(x)\n  File \"/tmp/tmp8divsfy0.py\", line 29, in triton_tanh\n    tanh_kernel[grid](x, out, n_elements, BLOCK_SIZE=BLOCK_SIZE, num_warps=8)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 370, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 739, in run\n    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 883, in _do_compile\n    kernel = self.compile(src, target=target, options=options.__dict__)\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 307, in compile\n    module = src.make_ir(target, options, codegen_fns, module_map, context)\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 80, in make_ir\n    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,\ntriton.compiler.errors.CompilationError: at 12:10:\ndef tanh_kernel(\n    x_ptr,\n    out_ptr,\n    n_elements,\n    BLOCK_SIZE: tl.constexpr,\n):\n    pid = tl.program_id(0)\n    block_start = pid * BLOCK_SIZE\n    offsets = block_start + tl.arange(0, BLOCK_SIZE)\n    mask = offsets < n_elements\n    x = tl.load(x_ptr + offsets, mask=mask, other=0.0)\n    out = tl.math.tanh(x)\n          ^\nAttributeError(\"module 'triton.language.math' has no attribute 'tanh'\")\n"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "23": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 6.57,
+            "runtime_stats": {
+                "mean": 6.57,
+                "std": 0.0715,
+                "min": 6.46,
+                "max": 6.84,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "24": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 5.87,
+            "runtime_stats": {
+                "mean": 5.87,
+                "std": 0.0951,
+                "min": 5.75,
+                "max": 6.16,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "25": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 3.75,
+            "runtime_stats": {
+                "mean": 3.75,
+                "std": 0.118,
+                "min": 3.67,
+                "max": 4.09,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "26": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 3.75,
+            "runtime_stats": {
+                "mean": 3.75,
+                "std": 0.0989,
+                "min": 3.57,
+                "max": 4.02,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "27": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 3.64,
+            "runtime_stats": {
+                "mean": 3.64,
+                "std": 0.0811,
+                "min": 3.45,
+                "max": 3.8,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "28": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 28 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "29": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 3.71,
+            "runtime_stats": {
+                "mean": 3.71,
+                "std": 0.0719,
+                "min": 3.66,
+                "max": 3.95,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "30": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 3.76,
+            "runtime_stats": {
+                "mean": 3.76,
+                "std": 0.152,
+                "min": 3.35,
+                "max": 4.01,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "31": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 3.62,
+            "runtime_stats": {
+                "mean": 3.62,
+                "std": 0.106,
+                "min": 3.25,
+                "max": 3.77,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "32": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 3.55,
+            "runtime_stats": {
+                "mean": 3.55,
+                "std": 0.172,
+                "min": 3.29,
+                "max": 3.86,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "33": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 33 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "34": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 6.49,
+            "runtime_stats": {
+                "mean": 6.49,
+                "std": 0.111,
+                "min": 6.28,
+                "max": 6.77,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "35": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 6.95,
+            "runtime_stats": {
+                "mean": 6.95,
+                "std": 0.133,
+                "min": 6.6,
+                "max": 7.2,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "36": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 4.81,
+            "runtime_stats": {
+                "mean": 4.81,
+                "std": 0.135,
+                "min": 4.6,
+                "max": 5.06,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "37": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 6.58,
+            "runtime_stats": {
+                "mean": 6.58,
+                "std": 0.111,
+                "min": 6.4,
+                "max": 6.8,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "38": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 7.55,
+            "runtime_stats": {
+                "mean": 7.55,
+                "std": 0.0454,
+                "min": 7.48,
+                "max": 7.74,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "39": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 7.89,
+            "runtime_stats": {
+                "mean": 7.89,
+                "std": 0.0545,
+                "min": 7.76,
+                "max": 8.1,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "40": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 1.52,
+            "runtime_stats": {
+                "mean": 1.52,
+                "std": 0.0102,
+                "min": 1.5,
+                "max": 1.55,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "41": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 2.45,
+            "runtime_stats": {
+                "mean": 2.45,
+                "std": 0.0586,
+                "min": 2.4,
+                "max": 2.68,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "42": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 2.71,
+            "runtime_stats": {
+                "mean": 2.71,
+                "std": 0.0697,
+                "min": 2.64,
+                "max": 3.05,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "43": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "skipped": true,
+                "skip_reason": "skip_rocm_triton_pool3d_hang_risk"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "44": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 1.57,
+            "runtime_stats": {
+                "mean": 1.57,
+                "std": 0.0323,
+                "min": 1.5,
+                "max": 1.63,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "45": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 6.65,
+            "runtime_stats": {
+                "mean": 6.65,
+                "std": 0.0365,
+                "min": 6.6,
+                "max": 6.77,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "46": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "skipped": true,
+                "skip_reason": "skip_rocm_triton_pool3d_hang_risk"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "47": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 2.64,
+            "runtime_stats": {
+                "mean": 2.64,
+                "std": 0.126,
+                "min": 2.38,
+                "max": 2.85,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "48": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 2.6,
+            "runtime_stats": {
+                "mean": 2.6,
+                "std": 0.112,
+                "min": 2.37,
+                "max": 2.71,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "49": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 3.37,
+            "runtime_stats": {
+                "mean": 3.37,
+                "std": 0.179,
+                "min": 3.02,
+                "max": 3.75,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "50": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "0.001091",
+                    "0.001095",
+                    "0.001092",
+                    "0.001090",
+                    "0.001097"
+                ],
+                "avg_difference": [
+                    "0.000182",
+                    "0.000182",
+                    "0.000182",
+                    "0.000182",
+                    "0.000182"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "51": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 3.04,
+            "runtime_stats": {
+                "mean": 3.04,
+                "std": 0.0321,
+                "min": 2.99,
+                "max": 3.13,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "52": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 2.66,
+            "runtime_stats": {
+                "mean": 2.66,
+                "std": 0.0834,
+                "min": 2.41,
+                "max": 2.77,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "53": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 6.03,
+            "runtime_stats": {
+                "mean": 6.03,
+                "std": 0.0764,
+                "min": 5.87,
+                "max": 6.17,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "54": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "runtime_error": "at 36:17:\n    od = spatial_offsets // WH_out\n    ow = (spatial_offsets // H_out) % W_out\n    oh = spatial_offsets % H_out\n\n    oc_offsets = pid_oc * BLOCK_OC + tl.arange(0, BLOCK_OC)\n    oc_mask = ...",
+                "runtime_error_name": "triton.compiler.errors.CompilationError",
+                "runtime_error_traceback": "Traceback (most recent call last):\n  File \"/sgl-workspace/triton-custom/python/triton/language/core.py\", line 43, in wrapper\n    return fn(*args, **kwargs)\n  File \"/sgl-workspace/triton-custom/python/triton/language/core.py\", line 1657, in arange\n    return _semantic.arange(start, end)\n  File \"/sgl-workspace/triton-custom/python/triton/language/semantic.py\", line 589, in arange\n    raise ValueError(\"arange's range must be a power of 2\")\nValueError: arange's range must be a power of 2\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/sgl-workspace/workspace/KernelBench/src/kernelbench/eval.py\", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/tmp/tmpro4z8qow.py\", line 128, in forward\n    return triton_conv3d(x, self.weight, self.stride, self.padding, self.dilation)\n  File \"/tmp/tmpro4z8qow.py\", line 104, in triton_conv3d\n    conv3d_kernel[grid](\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 370, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 739, in run\n    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 883, in _do_compile\n    kernel = self.compile(src, target=target, options=options.__dict__)\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 307, in compile\n    module = src.make_ir(target, options, codegen_fns, module_map, context)\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 80, in make_ir\n    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,\ntriton.compiler.errors.CompilationError: at 36:17:\n    od = spatial_offsets // WH_out\n    ow = (spatial_offsets // H_out) % W_out\n    oh = spatial_offsets % H_out\n\n    oc_offsets = pid_oc * BLOCK_OC + tl.arange(0, BLOCK_OC)\n    oc_mask = oc_offsets < OC\n\n    KDH = KD * KW * KH\n    KWH = KW * KH\n    IK = IC * KDH\n\n    ik_offsets = tl.arange(0, PAD_IK)\n                 ^\narange's range must be a power of 2\n"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "55": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 55 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "56": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "0.001261",
+                    "0.001271",
+                    "0.001234",
+                    "0.001226",
+                    "0.001245"
+                ],
+                "avg_difference": [
+                    "0.000196",
+                    "0.000196",
+                    "0.000196",
+                    "0.000196",
+                    "0.000196"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "57": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 29.8,
+            "runtime_stats": {
+                "mean": 29.8,
+                "std": 0.0655,
+                "min": 29.7,
+                "max": 30.0,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "58": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "59": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 8.98,
+            "runtime_stats": {
+                "mean": 8.98,
+                "std": 0.171,
+                "min": 8.71,
+                "max": 9.33,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "60": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 9.41,
+            "runtime_stats": {
+                "mean": 9.41,
+                "std": 0.0414,
+                "min": 9.37,
+                "max": 9.61,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "61": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "62": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "0.001119",
+                    "0.001184",
+                    "0.001100",
+                    "0.001108",
+                    "0.001102"
+                ],
+                "avg_difference": [
+                    "0.000190",
+                    "0.000190",
+                    "0.000190",
+                    "0.000190",
+                    "0.000190"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "63": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "other_error": "error: HIP error: invalid argument\nSearch for `hipErrorInvalidValue' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__HIPRT__TYPES.html for more information.\nHIP kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing AMD_SERIALIZE_KERNEL=3\nCompile with `TORCH_USE_HIP_DSA` to enable device-side assertions.\n",
+                "other_error_name": "torch.AcceleratorError",
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "64": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 64 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "65": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "66": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "0.001120",
+                    "0.001227",
+                    "0.001183",
+                    "0.001141",
+                    "0.001140"
+                ],
+                "avg_difference": [
+                    "0.000199",
+                    "0.000199",
+                    "0.000199",
+                    "0.000199",
+                    "0.000199"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "67": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "0.001329",
+                    "0.001344",
+                    "0.001312",
+                    "0.001346",
+                    "0.001346"
+                ],
+                "avg_difference": [
+                    "0.000196",
+                    "0.000196",
+                    "0.000196",
+                    "0.000197",
+                    "0.000196"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "68": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 315.0,
+            "runtime_stats": {
+                "mean": 315.0,
+                "std": 0.0463,
+                "min": 315.0,
+                "max": 315.0,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "69": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "1.723466",
+                    "1.668889",
+                    "1.714766",
+                    "1.713245",
+                    "1.684635"
+                ],
+                "avg_difference": [
+                    "0.270166",
+                    "0.270156",
+                    "0.270147",
+                    "0.270187",
+                    "0.270154"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "70": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "71": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 71 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "72": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 22.5,
+            "runtime_stats": {
+                "mean": 22.5,
+                "std": 0.0194,
+                "min": 22.4,
+                "max": 22.5,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "73": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 73 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "74": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "0.000847",
+                    "0.000830",
+                    "0.000836",
+                    "0.000839",
+                    "0.000823"
+                ],
+                "avg_difference": [
+                    "0.000142",
+                    "0.000142",
+                    "0.000142",
+                    "0.000142",
+                    "0.000142"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "75": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 7.1,
+            "runtime_stats": {
+                "mean": 7.1,
+                "std": 0.0324,
+                "min": 7.0,
+                "max": 7.15,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "76": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "runtime_error": "out of resource: shared memory, Required: 131072, Hardware limit: 65536. Reducing block sizes or `num_stages` may help.",
+                "runtime_error_name": "triton.runtime.errors.OutOfResources",
+                "runtime_error_traceback": "Traceback (most recent call last):\n  File \"/sgl-workspace/workspace/KernelBench/src/kernelbench/eval.py\", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/tmp/tmp2mzu9or7.py\", line 115, in forward\n    conv1d_kernel[grid](\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 370, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/autotuner.py\", line 252, in run\n    ret = self.fn.run(\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 760, in run\n    launch_metadata = kernel.launch_metadata(grid, stream, *bound_args.values())\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 485, in launch_metadata\n    self._init_handles()\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 459, in _init_handles\n    raise_(OutOfResources(self.metadata.shared, max_shared, \"shared memory\"))\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 451, in raise_\n    raise err\ntriton.runtime.errors.OutOfResources: out of resource: shared memory, Required: 131072, Hardware limit: 65536. Reducing block sizes or `num_stages` may help.\n"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "77": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 119.0,
+            "runtime_stats": {
+                "mean": 119.0,
+                "std": 0.0914,
+                "min": 118.0,
+                "max": 119.0,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "78": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 78 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "79": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 1.76,
+            "runtime_stats": {
+                "mean": 1.76,
+                "std": 0.0699,
+                "min": 1.71,
+                "max": 2.04,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "80": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "runtime_error": "object of type 'int' has no len()",
+                "runtime_error_name": "builtins.TypeError",
+                "runtime_error_traceback": "Traceback (most recent call last):\n  File \"/sgl-workspace/workspace/KernelBench/src/kernelbench/eval.py\", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/tmp/tmpdk2rus6v.py\", line 111, in forward\n    conv2d_kernel[grid_size](\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 370, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 755, in run\n    grid_size = len(grid)\nTypeError: object of type 'int' has no len()\n"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "81": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 17.2,
+            "runtime_stats": {
+                "mean": 17.2,
+                "std": 0.0127,
+                "min": 17.2,
+                "max": 17.3,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "82": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 1.12,
+            "runtime_stats": {
+                "mean": 1.12,
+                "std": 0.0462,
+                "min": 1.05,
+                "max": 1.25,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "83": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 83 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "84": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 3.65,
+            "runtime_stats": {
+                "mean": 3.65,
+                "std": 0.121,
+                "min": 3.51,
+                "max": 4.07,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "85": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 1.03,
+            "runtime_stats": {
+                "mean": 1.03,
+                "std": 0.0449,
+                "min": 0.933,
+                "max": 1.11,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "86": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "2.297334",
+                    "2.309414",
+                    "2.289567",
+                    "2.246601",
+                    "2.314945"
+                ],
+                "avg_difference": [
+                    "0.232905",
+                    "0.232893",
+                    "0.232886",
+                    "0.232892",
+                    "0.232897"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "87": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "0.001216",
+                    "0.001185",
+                    "0.001195",
+                    "0.001198",
+                    "0.001194"
+                ],
+                "avg_difference": [
+                    "0.000188",
+                    "0.000188",
+                    "0.000188",
+                    "0.000188",
+                    "0.000188"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "88": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "runtime_error": "at 16:27:\n    BLOCK_SIZE: tl.constexpr,\n):\n    pid = tl.program_id(0)\n    block_start = pid * BLOCK_SIZE\n    offsets = block_start + tl.arange(0, BLOCK_SIZE)\n    mask = offsets < n_elements\n    x =...",
+                "runtime_error_name": "triton.compiler.errors.CompilationError",
+                "runtime_error_traceback": "Traceback (most recent call last):\n  File \"/sgl-workspace/workspace/KernelBench/src/kernelbench/eval.py\", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/tmp/tmpr77gg19b.py\", line 41, in forward\n    return triton_gelu(x)\n  File \"/tmp/tmpr77gg19b.py\", line 33, in triton_gelu\n    gelu_kernel[grid](x, out, n_elements, BLOCK_SIZE=BLOCK_SIZE)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 370, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 739, in run\n    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 883, in _do_compile\n    kernel = self.compile(src, target=target, options=options.__dict__)\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 307, in compile\n    module = src.make_ir(target, options, codegen_fns, module_map, context)\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 80, in make_ir\n    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,\ntriton.compiler.errors.CompilationError: at 16:27:\n    BLOCK_SIZE: tl.constexpr,\n):\n    pid = tl.program_id(0)\n    block_start = pid * BLOCK_SIZE\n    offsets = block_start + tl.arange(0, BLOCK_SIZE)\n    mask = offsets < n_elements\n    x = tl.load(x_ptr + offsets, mask=mask, other=0.0)\n\n    # 0.5 * x * (1.0 + tanh(sqrt(2/pi) * (x + 0.044715 * x^3)))\n    x3 = x * x * x\n    inner = 0.7978845608028654 * (x + 0.044715 * x3)\n    out = 0.5 * x * (1.0 + tl.tanh(inner))\n                           ^\nAttributeError(\"module 'triton.language' has no attribute 'tanh'\")\n"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "89": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 2.71,
+            "runtime_stats": {
+                "mean": 2.71,
+                "std": 0.14,
+                "min": 2.46,
+                "max": 2.96,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "90": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 2.49,
+            "runtime_stats": {
+                "mean": 2.49,
+                "std": 0.131,
+                "min": 2.34,
+                "max": 2.79,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "91": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "0.075195",
+                    "0.073242",
+                    "0.076172",
+                    "0.079102",
+                    "0.071289"
+                ],
+                "avg_difference": [
+                    "0.006027",
+                    "0.006015",
+                    "0.005980",
+                    "0.005982",
+                    "0.006007"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "92": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_issue": "Output shape mismatch: Expected torch.Size([32767, 32769]), got torch.Size([32768, 32768])",
+                "correctness_issue_name": "correctness_issue"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "93": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 3.75,
+            "runtime_stats": {
+                "mean": 3.75,
+                "std": 0.184,
+                "min": 3.49,
+                "max": 4.02,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "94": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 2.47,
+            "runtime_stats": {
+                "mean": 2.47,
+                "std": 0.132,
+                "min": 2.35,
+                "max": 2.75,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "95": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "other_error": "error: \"nll_loss_forward_reduce_cuda_kernel_2d_index\" not implemented for 'Float'",
+                "other_error_name": "builtins.NotImplementedError",
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "96": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 2.57,
+            "runtime_stats": {
+                "mean": 2.57,
+                "std": 0.15,
+                "min": 2.4,
+                "max": 2.83,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "97": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "0.000230",
+                    "0.000232",
+                    "0.000234",
+                    "0.000232",
+                    "0.000232"
+                ],
+                "avg_difference": [
+                    "0.000180",
+                    "0.000180",
+                    "0.000180",
+                    "0.000180",
+                    "0.000180"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "98": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_issue": "Output shape mismatch: Expected torch.Size([]), got torch.Size([1])",
+                "correctness_issue_name": "correctness_issue"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "99": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 0.95,
+            "runtime_stats": {
+                "mean": 0.95,
+                "std": 0.0427,
+                "min": 0.924,
+                "max": 1.13,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "100": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 1.16,
+            "runtime_stats": {
+                "mean": 1.16,
+                "std": 0.0841,
+                "min": 1.03,
+                "max": 1.46,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ]
+}

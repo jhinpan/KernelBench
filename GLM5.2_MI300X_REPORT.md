@@ -1,49 +1,55 @@
 # GLM-5.2-FP8 on KernelBench (Triton) — AMD MI300X
 
-**Date:** 2026-06-22 · **Branch:** `MI300-GLM5.2` · **Hardware:** 8× AMD Instinct MI300X (gfx942), ROCm 7.2
+**Date:** 2026-06-23 · **Branch:** `MI300-GLM5.2` · **Hardware:** 8× AMD Instinct MI300X (gfx942), ROCm 7.2
 
 ## Task
-Use **GLM-5.2-FP8** (served by SGLang, OpenAI endpoint on `:30000`) to generate **Triton** GPU kernels for KernelBench PyTorch programs, and measure how many the model can "serve" (compile + pass correctness) on MI300X — across all of Levels 1–3.
+Use **GLM-5.2-FP8** (served by SGLang, OpenAI endpoint on `:30000`) to generate **Triton** GPU kernels for KernelBench PyTorch programs, and measure how many the model can "serve" (**compile + pass correctness**) on MI300X — across Levels 1–3 (250 problems).
 
 ## Setup
-- **Generator:** GLM-5.2-FP8 via SGLang, wired as KernelBench `server_type=glm_5_2` (routed through `/v1/chat/completions` so the chat template + thinking apply; inline `<think>…</think>` is stripped before code extraction). Greedy (temp 0), `max_tokens=16384`, one-shot prompt.
-- **Backend:** `backend=triton`, `precision=fp32`, `gpu_arch=["gfx942"]`. Triton runs on ROCm via its HIP backend; KernelBench eval explicitly allows `triton` on AMD.
-- **Eval:** serial mode (`glm_5_2_eval_serial.sh`) for ROCm stability — per-problem, `num_correct_trials=5`, `num_perf_trials=30`, 180 s timeout, skip-record on hang. Server shut down during eval to give the GPU full memory.
-- **"Served" = compiled AND correct** (passes all 5 randomized-input trials vs the PyTorch reference, `torch.allclose` fp32 tol 1e-4). **fast_1** = correct AND faster than PyTorch eager.
+- **Generator:** GLM-5.2-FP8 via SGLang, `server_type=glm_5_2`, routed through `/v1/chat/completions` (chat template + thinking applied; inline `<think>…</think>` stripped). Greedy (temp 0), `max_tokens=16384`, one-shot prompt, **one sample/problem**.
+- **Backend:** `backend=triton`, `precision=fp32`, `gpu_arch=["gfx942"]`. Triton runs on ROCm via its HIP backend.
+- **Eval:** serial mode (ROCm-stable), `num_correct_trials=5`, `num_perf_trials=30`, 180 s timeout, server down during eval.
+- **"Served" = compiled AND correct** (5/5 randomized trials vs PyTorch, fp32 tol 1e-4). **fast_1** = correct AND faster than PyTorch eager.
 
-## Results — all 3 levels (250 problems)
+## Headline results (corrected)
 
-| Level | Problems | Generated valid Triton | Compiled | **Correct (served)** | fast_1 | Skipped (eval hang) |
-|-------|---------:|-----------------------:|---------:|---------------------:|-------:|--------------------:|
-| **L1** single-op | 100 | 89 | 41 | **29** (29%) | 0 | 3 |
-| **L2** fusion | 100 | 80 | 33 | **20** (20%) | 0 | 4 |
-| **L3** full model | 50 | 36 | 2 | **1** (2%) | 0 | 5 |
-| **Total** | **250** | **205** (82%) | **76** | **50 (20%)** | **0** | 12 |
+| Level | Problems | Generated valid Triton | Compiled | **Correct (served)** | fast_1 |
+|-------|---------:|-----------------------:|---------:|---------------------:|-------:|
+| **L1** single-op | 100 | 88 | 84 | **51 (51%)** | 0 |
+| **L2** fusion | 100 | 87 | 78 | **35 (35%)** | 0 |
+| **L3** full model | 50 | 16 | 16 | **6 (12%)** | 0 |
+| **Total** | **250** | **191** | **178 (71%)** | **92 (37%)** | **0** |
 
-Funnel (all levels): **250 tasks → 205 generated a valid `@triton.jit` kernel → 76 compiled on MI300X → 50 numerically correct → 0 faster than PyTorch.**
+## Important: a harness bug was deflating round-1 results
+The first run scored only **50/250 (20%)**. Root cause was **not** GLM-5.2 — it was KernelBench's `extract_first_code`, which grabs the **first** ```` ```python ```` block. GLM-5.2 (a thinking model) writes an illustrative kernel *snippet* first and the **complete module** (imports + `@triton.jit` + `class ModelNew`) later, so ~half the saved kernels were snippets missing imports/`ModelNew` → instant `NameError`.
+
+**Fix:** `extract_code_for_modelnew()` selects the block containing `ModelNew` (+ raw responses are now saved). Because generation is temp 0 (deterministic), re-running recovered the true kernels.
+
+### Before vs after (same model, same server, same settings)
+| | Compiled | Correct | Correct % |
+|---|---:|---:|---:|
+| Round 1 (`extract_first_code` bug) | 76/250 | 50/250 | 20% |
+| **Corrected (`extract_code_for_modelnew`)** | **178/250** | **92/250** | **37%** |
+
+Per level, correct went L1 29→**51**, L2 20→**35**, L3 1→**6**. (L3 "generated" dropped 36→16: the corrected extraction returns full modules, some of which KernelBench's static checker rejects for using `torch.nn` layers; round-1's 36 were mostly junk snippets that happened to pass the checker.)
 
 ## Reading the numbers
-- **Generation is the model's strength:** GLM-5.2 produced a syntactically-valid Triton kernel (`@triton.jit` + `tl.*`, passes the static checker) for **82%** of tasks. The 45 generation failures were ops where it returned PyTorch / a `pass` / no `@triton.jit` — concentrated in reductions (cumsum) and loss functions.
-- **Correctness drops with difficulty, as expected:** L1 29% → L2 20% → L3 **2%**. Full model architectures (L3) in hand-written Triton are extremely hard — only 1/50 correct, and only 2/36 generated kernels even compiled (most L3 attempts reference undefined symbols / partial kernels).
-- **Dominant failure modes:** compile-stage `NameError`/`AttributeError` (undefined names, missing `ModelNew` for the static-rejected problems), then `Output mismatch` on the kernels that did compile.
-- **fast_1 = 0 everywhere:** no one-shot generated Triton kernel beat PyTorch eager (which dispatches to tuned rocBLAS/aten on MI300X). This matches public KernelBench findings — speedups need iterative/agentic refinement, not single-shot generation.
+- **Generation is GLM-5.2's strength:** valid Triton kernels for L1/L2 ~87–88%. L3 (full architectures) is much harder to express purely in Triton.
+- **Correctness drops with difficulty:** L1 51% → L2 35% → L3 12%. This is in line with public KernelBench (single-shot, no iteration).
+- **fast_1 = 0 across all levels:** no one-shot generated Triton kernel beat PyTorch eager (tuned rocBLAS/aten on MI300X). Speedups need iterative/agentic refinement, not single greedy samples.
 
-## How to reproduce
+## Reproduce
 ```bash
-# 1. Serve GLM-5.2-FP8 (SGLang, ROCm) on :30000  (see sglang-cookbook glm52_fp8_playbook)
-# 2. KernelBench generate (per level L in 1 2 3):
+# serve GLM-5.2-FP8 (SGLang, ROCm) on :30000, then per level L in 1 2 3:
 SGLANG_API_KEY=EMPTY LEVEL=$L NUM_WORKERS=16 bash scripts/glm_5_2_generate.sh
-# 3. Eval on MI300X (server can be down):
-LEVEL=$L bash scripts/glm_5_2_eval_serial.sh
-# 4. Summary:
+LEVEL=$L bash scripts/glm_5_2_eval_serial.sh      # server can be down
 python scripts/glm_5_2_report.py --run-names glm_5_2_level1,glm_5_2_level2,glm_5_2_level3
 ```
 
-## Files added on this branch
-- `src/kernelbench/utils.py` — `glm_5_2` server type + preset; chat routing + `<think>` stripping.
-- `scripts/glm_5_2_{smoke,generate,eval,eval_serial,all_levels}.sh`, `scripts/glm_5_2_report.py`.
+## Files on this branch
+- `src/kernelbench/utils.py` — `glm_5_2` server type + preset; chat routing + `<think>` strip; `extract_code_for_modelnew`.
+- `scripts/glm_5_2_*.sh`, `scripts/glm_5_2_report.py`.
+- `results/glm5.2_mi300x_corrected/` (corrected per-level verdicts + summary); `results/glm5.2_mi300x/` (round-1, for the record).
 
 ## Caveats
-- One-shot, greedy, single sample per problem (no pass@k, no self-repair). Numbers are a floor for what GLM-5.2 can do with more samples/iteration.
-- `max_tokens=16384` with GLM-5.2's default `max` reasoning effort occasionally truncates before the code block on the hardest problems (contributes to L3 generation misses).
-- Triton-on-ROCm numeric tolerance (fp32 1e-4) can flag MI300X matmul drift as "Output mismatch".
+One-shot, greedy, single sample/problem (no pass@k, no self-repair) — a floor, not a ceiling. `max_tokens=16384` with GLM-5.2's default `max` reasoning occasionally truncates the hardest problems before the code block.
