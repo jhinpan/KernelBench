@@ -438,6 +438,37 @@ def extract_first_code(output_string: str, code_language_types: list[str]) -> st
     return None
 
 
+def extract_code_for_modelnew(output_string: str, code_language_types: list[str]) -> str | None:
+    """
+    Extract the code block that defines the KernelBench entry point `ModelNew`.
+
+    Thinking/chat models (e.g. GLM-5.2) often emit an illustrative kernel snippet
+    in an early ```python block and the *complete* module (imports + @triton.jit +
+    class ModelNew) in a later block. `extract_first_code` would grab the snippet,
+    which is missing imports / ModelNew and fails to load. Prefer the last block
+    that contains `ModelNew`; fall back to the last block, then the first.
+    """
+    if output_string is None:
+        return None
+    trimmed = output_string.strip()
+    matches = list(re.finditer(r"```(.*?)```", trimmed, re.DOTALL))
+    if not matches:
+        return None
+
+    def _clean(code: str) -> str:
+        code = code.strip()
+        for code_type in code_language_types:
+            if code.startswith(code_type):
+                code = code[len(code_type):].strip()
+        return code
+
+    blocks = [_clean(m.group(1)) for m in matches]
+    for block in reversed(blocks):
+        if "ModelNew" in block:
+            return block
+    return blocks[-1]
+
+
 def extract_last_code(output_string: str, code_language_types: list[str]) -> str | None:
     """
     Extract last code block from model output, specified by code_language_type

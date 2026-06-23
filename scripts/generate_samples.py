@@ -13,6 +13,7 @@ from kernelbench.prompt_constructor_toml import get_prompt_for_backend, get_cust
 from kernelbench.utils import (
     create_inference_server_from_presets,
     extract_first_code,
+    extract_code_for_modelnew,
     maybe_multithread,
     set_gpu_arch,
 )
@@ -139,8 +140,18 @@ def generate_sample_single(
             f.write(custom_prompt)
 
     # Query server with constructed prompt
-    custom_kernel = inference_server(custom_prompt)
-    custom_kernel = extract_first_code(custom_kernel, ["python", "cpp"])
+    raw_response = inference_server(custom_prompt)
+    # Save the raw model response so we never lose it to extraction (re-extractable).
+    if isinstance(raw_response, str):
+        raw_path = os.path.join(
+            run_dir,
+            f"level_{config.level}_problem_{work.problem_id}_sample_{work.sample_id}_response.txt",
+        )
+        with open(raw_path, "w") as f:
+            f.write(raw_response)
+    # Robust extraction: pick the block defining ModelNew (chat/thinking models emit
+    # an early snippet then the full module; extract_first_code would grab the snippet).
+    custom_kernel = extract_code_for_modelnew(raw_response, ["python", "cpp"])
     # check LLM is able to generate custom CUDA code
     assert custom_kernel is not None, "Custom CUDA code generation failed"
 

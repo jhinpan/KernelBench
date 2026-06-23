@@ -10,6 +10,7 @@ from kernelbench.prompt_constructor_toml import get_prompt_for_backend, get_cust
 from kernelbench.utils import (
     create_inference_server_from_presets,
     extract_first_code,
+    extract_code_for_modelnew,
     query_server,
     set_gpu_arch,
 )
@@ -227,7 +228,7 @@ def main(config: EvalConfig):
 
     # Query server with constructed prompt
     custom_kernel = inference_server(custom_prompt)
-    custom_kernel = extract_first_code(custom_kernel, ["python", "cpp"])
+    custom_kernel = extract_code_for_modelnew(custom_kernel, ["python", "cpp"])
 
     # check LLM is able to generate custom kernel code
     assert (
