@@ -1,0 +1,721 @@
+{
+    "1": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "skipped": true,
+                "skip_reason": "eval_process_crashed"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "2": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "3": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 1.27,
+            "runtime_stats": {
+                "mean": 1.27,
+                "std": 0.00542,
+                "min": 1.26,
+                "max": 1.29,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "4": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "5": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "skipped": true,
+                "skip_reason": "eval_process_crashed"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "6": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "7": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 7 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "8": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "6.806105",
+                    "6.700215",
+                    "6.597693",
+                    "6.682778",
+                    "6.981282"
+                ],
+                "avg_difference": [
+                    "0.517391",
+                    "0.517430",
+                    "0.517328",
+                    "0.517331",
+                    "0.517434"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "9": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "10": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "11": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "12": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "13": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "14": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 14 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "15": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "16": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "17": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "18": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "19": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "skipped": true,
+                "skip_reason": "eval_process_crashed"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "20": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "21": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "22": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 22 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "23": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "24": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 24 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "25": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "26": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "27": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "28": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "29": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "30": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "31": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "32": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "skipped": true,
+                "skip_reason": "eval_process_crashed"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "33": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 33 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "34": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "35": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 35 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "36": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 36 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "37": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 37 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "38": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "skipped": true,
+                "skip_reason": "eval_process_crashed"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "39": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 39 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "40": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "41": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 41 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "42": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 42 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "43": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "44": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "45": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 45 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "46": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "47": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 47 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "48": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "49": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 49 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "50": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ]
+}

@@ -1,0 +1,1644 @@
+{
+    "1": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "2": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 7.1,
+            "runtime_stats": {
+                "mean": 7.1,
+                "std": 0.261,
+                "min": 6.63,
+                "max": 7.56,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "3": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "4": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "5": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 7.54,
+            "runtime_stats": {
+                "mean": 7.54,
+                "std": 0.386,
+                "min": 7.06,
+                "max": 8.06,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "6": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "7": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 7 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "8": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "9": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 0.889,
+            "runtime_stats": {
+                "mean": 0.889,
+                "std": 0.021,
+                "min": 0.85,
+                "max": 0.952,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "10": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 10 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "11": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "12": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "13": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "14": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "0.018066",
+                    "0.017578",
+                    "0.022705",
+                    "0.022095",
+                    "0.020142"
+                ],
+                "avg_difference": [
+                    "0.004679",
+                    "0.004537",
+                    "0.004815",
+                    "0.004708",
+                    "0.004643"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "15": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "16": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "runtime_error": "at 18:17:\n):\n    block_start = tl.program_id(0) * BLOCK_SIZE\n    offsets = block_start + tl.arange(0, BLOCK_SIZE)\n    mask = offsets < n_elements\n\n    x = tl.load(x_ptr + offsets, mask=mask, other=...",
+                "runtime_error_name": "triton.compiler.errors.CompilationError",
+                "runtime_error_traceback": "Traceback (most recent call last):\n  File \"/sgl-workspace/workspace/KernelBench/src/kernelbench/eval.py\", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/tmp/tmpkrzx44j2.py\", line 64, in forward\n    x = fused_post_conv(x, self.add_value, self.scale)\n  File \"/tmp/tmpkrzx44j2.py\", line 46, in fused_post_conv\n    fused_post_conv_kernel[grid](x, out, add_value, scale, n_elements, BLOCK_SIZE=BLOCK_SIZE)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 370, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 739, in run\n    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 883, in _do_compile\n    kernel = self.compile(src, target=target, options=options.__dict__)\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 307, in compile\n    module = src.make_ir(target, options, codegen_fns, module_map, context)\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 80, in make_ir\n    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,\ntriton.compiler.errors.CompilationError: at 18:17:\n):\n    block_start = tl.program_id(0) * BLOCK_SIZE\n    offsets = block_start + tl.arange(0, BLOCK_SIZE)\n    mask = offsets < n_elements\n\n    x = tl.load(x_ptr + offsets, mask=mask, other=0.0)\n\n    # Mish activation: x * tanh(softplus(x))\n    # Numerically stable softplus: max(x, 0) + ln(1 + exp(-|x|))\n    abs_x = tl.abs(x)\n    sp = tl.maximum(x, 0.0) + tl.log(1.0 + tl.exp(-abs_x))\n    mish_x = x * tl.tanh(sp)\n                 ^\nAttributeError(\"module 'triton.language' has no attribute 'tanh'\")\n"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "17": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 5.64,
+            "runtime_stats": {
+                "mean": 5.64,
+                "std": 0.0799,
+                "min": 5.41,
+                "max": 5.88,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "18": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "0.000196"
+                ],
+                "avg_difference": [
+                    "0.000038"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(4 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "19": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "20": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 2.21,
+            "runtime_stats": {
+                "mean": 2.21,
+                "std": 0.0243,
+                "min": 2.18,
+                "max": 2.27,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "21": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "22": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 22 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "23": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 23 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "24": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "25": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 5.22,
+            "runtime_stats": {
+                "mean": 5.22,
+                "std": 0.1,
+                "min": 4.97,
+                "max": 5.49,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "26": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 8.46,
+            "runtime_stats": {
+                "mean": 8.46,
+                "std": 0.0659,
+                "min": 8.37,
+                "max": 8.71,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "27": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 27 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "28": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "29": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "runtime_error": "at 38:18:\n        acc += tl.dot(x, w)\n        x_ptrs += BLOCK_K * stride_xk\n        w_ptrs += BLOCK_K * stride_wk\n\n    # Add bias\n    bias = tl.load(b_ptr + offs_n, mask=offs_n < N, other=0.0)\n    ...",
+                "runtime_error_name": "triton.compiler.errors.CompilationError",
+                "runtime_error_traceback": "Traceback (most recent call last):\n  File \"/sgl-workspace/workspace/KernelBench/src/kernelbench/eval.py\", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/tmp/tmpkyt466rd.py\", line 85, in forward\n    matmul_mish_mish_kernel[grid](\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 370, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 739, in run\n    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 883, in _do_compile\n    kernel = self.compile(src, target=target, options=options.__dict__)\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 307, in compile\n    module = src.make_ir(target, options, codegen_fns, module_map, context)\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 80, in make_ir\n    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,\ntriton.compiler.errors.CompilationError: at 38:18:\n        acc += tl.dot(x, w)\n        x_ptrs += BLOCK_K * stride_xk\n        w_ptrs += BLOCK_K * stride_wk\n\n    # Add bias\n    bias = tl.load(b_ptr + offs_n, mask=offs_n < N, other=0.0)\n    acc += bias[None, :]\n\n    # Apply Mish twice: mish(x) = x * tanh(softplus(x))\n    # Stable softplus: max(x, 0) + log(1 + exp(-|x|))\n    sp1 = tl.maximum(acc, 0.0) + tl.log(1.0 + tl.exp(-tl.abs(acc)))\n    mish1 = acc * tl.tanh(sp1)\n                  ^\nAttributeError(\"module 'triton.language' has no attribute 'tanh'\")\n"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "30": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "31": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 5.49,
+            "runtime_stats": {
+                "mean": 5.49,
+                "std": 0.0997,
+                "min": 5.32,
+                "max": 5.89,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "32": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 10.5,
+            "runtime_stats": {
+                "mean": 10.5,
+                "std": 0.0575,
+                "min": 10.3,
+                "max": 10.5,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "33": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "skipped": true,
+                "skip_reason": "eval_process_crashed"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "34": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 8.29,
+            "runtime_stats": {
+                "mean": 8.29,
+                "std": 0.0633,
+                "min": 8.15,
+                "max": 8.51,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "35": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 35 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "36": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.IndentationError",
+                "compilation_error": "unexpected indent (tmp4btpphpm.py, line 2)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "37": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "38": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "39": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 39 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "40": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "runtime_error": "out of resource: shared memory, Required: 131072, Hardware limit: 65536. Reducing block sizes or `num_stages` may help.",
+                "runtime_error_name": "triton.runtime.errors.OutOfResources",
+                "runtime_error_traceback": "Traceback (most recent call last):\n  File \"/sgl-workspace/workspace/KernelBench/src/kernelbench/eval.py\", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/tmp/tmp0z7ftx_7.py\", line 78, in forward\n    return triton_linear_scale(x, self.matmul.weight, self.matmul.bias, self.s)\n  File \"/tmp/tmp0z7ftx_7.py\", line 57, in triton_linear_scale\n    matmul_scale_kernel[grid](\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 370, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 760, in run\n    launch_metadata = kernel.launch_metadata(grid, stream, *bound_args.values())\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 485, in launch_metadata\n    self._init_handles()\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 459, in _init_handles\n    raise_(OutOfResources(self.metadata.shared, max_shared, \"shared memory\"))\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 451, in raise_\n    raise err\ntriton.runtime.errors.OutOfResources: out of resource: shared memory, Required: 131072, Hardware limit: 65536. Reducing block sizes or `num_stages` may help.\n"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "41": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "42": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 42 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "43": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "44": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 1.65,
+            "runtime_stats": {
+                "mean": 1.65,
+                "std": 0.0497,
+                "min": 1.54,
+                "max": 1.78,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "45": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "46": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "runtime_error": "at 37:10:\n    ih = oh * 2\n    iw = ow * 2\n    x_base = bc * HW + ih * W + iw\n\n    # Load 4 values for 2x2 average pooling\n    x00 = tl.load(x_ptr + x_base, mask=mask, other=0.0)\n    x01 = tl.load(x...",
+                "runtime_error_name": "triton.compiler.errors.CompilationError",
+                "runtime_error_traceback": "Traceback (most recent call last):\n  File \"/sgl-workspace/workspace/KernelBench/src/kernelbench/eval.py\", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/tmp/tmp1x5dzoe8.py\", line 80, in forward\n    fused_subtract_tanh_subtract_avgpool2x2_kernel[grid](\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 370, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 739, in run\n    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 883, in _do_compile\n    kernel = self.compile(src, target=target, options=options.__dict__)\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 307, in compile\n    module = src.make_ir(target, options, codegen_fns, module_map, context)\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 80, in make_ir\n    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,\ntriton.compiler.errors.CompilationError: at 37:10:\n    ih = oh * 2\n    iw = ow * 2\n    x_base = bc * HW + ih * W + iw\n\n    # Load 4 values for 2x2 average pooling\n    x00 = tl.load(x_ptr + x_base, mask=mask, other=0.0)\n    x01 = tl.load(x_ptr + x_base + 1, mask=mask, other=0.0)\n    x10 = tl.load(x_ptr + x_base + W, mask=mask, other=0.0)\n    x11 = tl.load(x_ptr + x_base + W + 1, mask=mask, other=0.0)\n\n    # Apply: subtract1, tanh, subtract2\n    x00 = tl.tanh(x00 - s1) - s2\n          ^\nAttributeError(\"module 'triton.language' has no attribute 'tanh'\")\n"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "47": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "runtime_error": "at 19:15:\n    offsets = block_start + tl.arange(0, BLOCK_SIZE)\n    mask = offsets < n_elements\n\n    x = tl.load(x_ptr + offsets, mask=mask, other=0.0)\n\n    # Compute softplus(x) with numerical stab...",
+                "runtime_error_name": "triton.compiler.errors.CompilationError",
+                "runtime_error_traceback": "Traceback (most recent call last):\n  File \"/sgl-workspace/workspace/KernelBench/src/kernelbench/eval.py\", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/tmp/tmpdmspttka.py\", line 62, in forward\n    x = fused_mish_tanh(x)\n  File \"/tmp/tmpdmspttka.py\", line 40, in fused_mish_tanh\n    fused_mish_tanh_kernel[grid](x, out, n_elements, BLOCK_SIZE=BLOCK_SIZE)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 370, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 739, in run\n    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 883, in _do_compile\n    kernel = self.compile(src, target=target, options=options.__dict__)\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 307, in compile\n    module = src.make_ir(target, options, codegen_fns, module_map, context)\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 80, in make_ir\n    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,\ntriton.compiler.errors.CompilationError: at 19:15:\n    offsets = block_start + tl.arange(0, BLOCK_SIZE)\n    mask = offsets < n_elements\n\n    x = tl.load(x_ptr + offsets, mask=mask, other=0.0)\n\n    # Compute softplus(x) with numerical stability\n    # softplus(x) = max(x, 0) + ln(1 + exp(-|x|))\n    abs_x = tl.abs(x)\n    sp = tl.maximum(x, 0.0) + tl.log(1.0 + tl.exp(-abs_x))\n\n    # Compute mish(x) = x * tanh(softplus(x))\n    mish = x * tl.tanh(sp)\n               ^\nAttributeError(\"module 'triton.language' has no attribute 'tanh'\")\n"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "48": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 3.59,
+            "runtime_stats": {
+                "mean": 3.59,
+                "std": 0.0893,
+                "min": 3.49,
+                "max": 4.01,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "49": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 2.27,
+            "runtime_stats": {
+                "mean": 2.27,
+                "std": 0.0364,
+                "min": 2.21,
+                "max": 2.36,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "50": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "51": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 51 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "52": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "53": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "54": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "55": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "1.068359",
+                    "1.067017",
+                    "1.069702",
+                    "1.069214",
+                    "1.065063"
+                ],
+                "avg_difference": [
+                    "1.046233",
+                    "1.045576",
+                    "1.046148",
+                    "1.046937",
+                    "1.044223"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "56": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "57": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 1.21,
+            "runtime_stats": {
+                "mean": 1.21,
+                "std": 0.0342,
+                "min": 1.12,
+                "max": 1.28,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "58": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 4.79,
+            "runtime_stats": {
+                "mean": 4.79,
+                "std": 0.0861,
+                "min": 4.65,
+                "max": 5.16,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "59": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "0.002574",
+                    "0.002551",
+                    "0.002643",
+                    "0.002487",
+                    "0.002506"
+                ],
+                "avg_difference": [
+                    "0.000198",
+                    "0.000198",
+                    "0.000198",
+                    "0.000198",
+                    "0.000198"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "60": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "61": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 61 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "62": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "63": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 63 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "64": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "65": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 65 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "66": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "67": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 4.41,
+            "runtime_stats": {
+                "mean": 4.41,
+                "std": 0.211,
+                "min": 4.09,
+                "max": 4.94,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "68": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "max_difference": [
+                    "0.001169",
+                    "0.001173",
+                    "0.001133",
+                    "0.001142",
+                    "0.001156"
+                ],
+                "avg_difference": [
+                    "0.000184",
+                    "0.000183",
+                    "0.000184",
+                    "0.000184",
+                    "0.000184"
+                ],
+                "correctness_issue": "Output mismatch",
+                "correctness_trials": "(0 / 5)"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "69": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "70": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "71": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.SyntaxError",
+                "compilation_error": "duplicate argument 'KH' in function definition"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "72": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "skipped": true,
+                "skip_reason": "skip_rocm_triton_pool3d_hang_risk"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "73": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "74": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "skipped": true,
+                "skip_reason": "skip_rocm_triton_pool3d_hang_risk"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "75": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 75 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "76": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "runtime_error": "out of resource: shared memory, Required: 98304, Hardware limit: 65536. Reducing block sizes or `num_stages` may help.",
+                "runtime_error_name": "triton.runtime.errors.OutOfResources",
+                "runtime_error_traceback": "Traceback (most recent call last):\n  File \"/sgl-workspace/workspace/KernelBench/src/kernelbench/eval.py\", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/tmp/tmpl75cwx6z.py\", line 91, in forward\n    return gemm_bias_relu(x, self.gemm.weight, self.bias)\n  File \"/tmp/tmpl75cwx6z.py\", line 70, in gemm_bias_relu\n    gemm_bias_relu_kernel[grid](\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 370, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 760, in run\n    launch_metadata = kernel.launch_metadata(grid, stream, *bound_args.values())\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 485, in launch_metadata\n    self._init_handles()\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 459, in _init_handles\n    raise_(OutOfResources(self.metadata.shared, max_shared, \"shared memory\"))\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 451, in raise_\n    raise err\ntriton.runtime.errors.OutOfResources: out of resource: shared memory, Required: 98304, Hardware limit: 65536. Reducing block sizes or `num_stages` may help.\n"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "77": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 77 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "78": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "79": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 79 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "80": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 80 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "81": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "runtime_error": "at 43:8:\n\n    if bias_ptr is not None:\n        bias = tl.load(bias_ptr + offs_n, mask=offs_n < N, other=0.0)\n        accumulator += bias[None, :]\n\n    # Epilogue: Swish, Divide by 2, Clamp, Tanh\n  ...",
+                "runtime_error_name": "triton.compiler.errors.CompilationError",
+                "runtime_error_traceback": "Traceback (most recent call last):\n  File \"/sgl-workspace/workspace/KernelBench/src/kernelbench/eval.py\", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/tmp/tmpvhxuxgh3.py\", line 87, in forward\n    matmul_swish_clamp_tanh_kernel[grid](\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 370, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 739, in run\n    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 883, in _do_compile\n    kernel = self.compile(src, target=target, options=options.__dict__)\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 307, in compile\n    module = src.make_ir(target, options, codegen_fns, module_map, context)\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 80, in make_ir\n    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,\ntriton.compiler.errors.CompilationError: at 43:8:\n\n    if bias_ptr is not None:\n        bias = tl.load(bias_ptr + offs_n, mask=offs_n < N, other=0.0)\n        accumulator += bias[None, :]\n\n    # Epilogue: Swish, Divide by 2, Clamp, Tanh\n    # Note: The final clamp is redundant as tanh output is already in (-1, 1)\n    x = accumulator\n    x = x * tl.sigmoid(x)\n    x = x * 0.5\n    x = tl.minimum(tl.maximum(x, -1.0), 1.0)\n    x = tl.tanh(x)\n        ^\nAttributeError(\"module 'triton.language' has no attribute 'tanh'\")\n"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "82": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "83": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "84": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 84 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "85": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "86": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 86 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "87": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.SyntaxError",
+                "compilation_error": "duplicate argument 'stride_oc' in function definition"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "88": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 2.91,
+            "runtime_stats": {
+                "mean": 2.91,
+                "std": 0.0413,
+                "min": 2.82,
+                "max": 3.01,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "89": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "90": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "91": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 7.91,
+            "runtime_stats": {
+                "mean": 7.91,
+                "std": 0.0608,
+                "min": 7.81,
+                "max": 8.07,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "92": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "runtime_error": "at 40:15:\n    for i in range(0, N, BLOCK_SIZE):\n        offsets = i + tl.arange(0, BLOCK_SIZE)\n        mask = offsets < N\n        x = tl.load(x_conv_ptr + base_offset + offsets, mask=mask, other=0....",
+                "runtime_error_name": "triton.compiler.errors.CompilationError",
+                "runtime_error_traceback": "Traceback (most recent call last):\n  File \"/sgl-workspace/workspace/KernelBench/src/kernelbench/eval.py\", line 771, in run_and_check_correctness\n    output_new = model_new(*inputs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1775, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n  File \"/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1786, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/tmp/tmpevtj507_.py\", line 102, in forward\n    fused_norm_act_kernel[grid](\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 370, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 739, in run\n    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)\n  File \"/sgl-workspace/triton-custom/python/triton/runtime/jit.py\", line 883, in _do_compile\n    kernel = self.compile(src, target=target, options=options.__dict__)\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 307, in compile\n    module = src.make_ir(target, options, codegen_fns, module_map, context)\n  File \"/sgl-workspace/triton-custom/python/triton/compiler/compiler.py\", line 80, in make_ir\n    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,\ntriton.compiler.errors.CompilationError: at 40:15:\n    for i in range(0, N, BLOCK_SIZE):\n        offsets = i + tl.arange(0, BLOCK_SIZE)\n        mask = offsets < N\n        x = tl.load(x_conv_ptr + base_offset + offsets, mask=mask, other=0.0)\n\n        c_local = offsets // (H * W)\n        c = g * C_per_G + c_local\n        w = tl.load(weight_ptr + c, mask=mask, other=0.0)\n        b_ = tl.load(bias_ptr + c, mask=mask, other=0.0)\n\n        norm = (x - mean) * rstd * w + b_\n        tanh = tl.tanh(norm)\n               ^\nAttributeError(\"module 'triton.language' has no attribute 'tanh'\")\n"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "93": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 3.74,
+            "runtime_stats": {
+                "mean": 3.74,
+                "std": 0.0537,
+                "min": 3.62,
+                "max": 3.87,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ],
+    "94": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.AttributeError",
+                "compilation_error": "module 'temp_module' has no attribute 'ModelNew'"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "95": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "skipped": true,
+                "skip_reason": "eval_process_crashed"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "96": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "97": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "compilation_error_name": "builtins.NameError",
+                "compilation_error": "name 'triton' is not defined"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "98": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 98 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "99": [
+        {
+            "sample_id": 0,
+            "compiled": false,
+            "correctness": false,
+            "metadata": {
+                "error": "Kernel not found for problem 99 sample 0"
+            },
+            "runtime": -1.0,
+            "runtime_stats": {}
+        }
+    ],
+    "100": [
+        {
+            "sample_id": 0,
+            "compiled": true,
+            "correctness": true,
+            "metadata": {
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0",
+                "correctness_trials": "(5 / 5)"
+            },
+            "runtime": 18.5,
+            "runtime_stats": {
+                "mean": 18.5,
+                "std": 0.0754,
+                "min": 18.3,
+                "max": 18.6,
+                "num_trials": 30,
+                "hardware": "AMD Instinct MI300X",
+                "device": "cuda:0"
+            }
+        }
+    ]
+}

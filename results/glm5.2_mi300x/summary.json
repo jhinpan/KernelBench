@@ -1,0 +1,29 @@
+{
+  "1": {
+    "problems": 100,
+    "recorded": 100,
+    "generated": 89,
+    "compiled": 41,
+    "correct": 29,
+    "fast1": 0,
+    "skipped": 3
+  },
+  "2": {
+    "problems": 100,
+    "recorded": 100,
+    "generated": 80,
+    "compiled": 33,
+    "correct": 20,
+    "fast1": 0,
+    "skipped": 4
+  },
+  "3": {
+    "problems": 50,
+    "recorded": 50,
+    "generated": 36,
+    "compiled": 2,
+    "correct": 1,
+    "fast1": 0,
+    "skipped": 5
+  }
+}
